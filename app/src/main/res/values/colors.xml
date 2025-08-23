@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales -->
+    <color name="primary">#FF6B9D</color>
+    <color name="primary_dark">#E55A8A</color>
+    <color name="primary_light">#FFB3D1</color>
+    
+    <color name="secondary">#4ECDC4</color>
+    <color name="secondary_dark">#45B7AF</color>
+    <color name="secondary_light">#A7E8E3</color>
+    
+    <color name="accent">#FFD93D</color>
+    <color name="accent_dark">#E6C437</color>
+    <color name="accent_light">#FFE88A</color>
+    
+    <!-- Colores de fondo -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="background_primary">#FAFAFA</color>
+    <color name="background_secondary">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="info_background">#E3F2FD</color>
+    
+    <!-- Colores de texto -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_tertiary">#BDBDBD</color>
+    <color name="text_inverse">#FFFFFF</color>
+    
+    <!-- Colores de estado -->
+    <color name="status_success">#4CAF50</color>
+    <color name="status_warning">#FF9800</color>
+    <color name="status_error">#F44336</color>
+    <color name="status_pending">#FF9800</color>
+    <color name="status_inactive">#9E9E9E</color>
+    
+    <!-- Colores especiales para Ritsu -->
+    <color name="ritsu_pink">#FF6B9D</color>
+    <color name="ritsu_blue">#4ECDC4</color>
+    <color name="ritsu_yellow">#FFD93D</color>
+    <color name="ritsu_purple">#9C27B0</color>
+    <color name="ritsu_green">#4CAF50</color>
+    
+    <!-- Colores de ropa -->
+    <color name="clothing_pink">#FFC0CB</color>
+    <color name="clothing_blue">#6495ED</color>
+    <color name="clothing_green">#90EE90</color>
+    <color name="clothing_red">#FF6B6B</color>
+    <color name="clothing_yellow">#FFFF99</color>
+    <color name="clothing_black">#2F2F2F</color>
+    <color name="clothing_white">#FFFFFF</color>
+    <color name="clothing_gray">#C0C0C0</color>
+    <color name="clothing_purple">#DDA0DD</color>
+    <color name="clothing_orange">#FFB347</color>
+    <color name="clothing_brown">#D2691E</color>
+    <color name="clothing_cyan">#40E0D0</color>
+    <color name="clothing_magenta">#FF00FF</color>
+    <color name="clothing_gold">#FFD700</color>
+    <color name="clothing_silver">#C0C0C0</color>
+    
+    <!-- Colores de transparencia -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent_black">#80000000</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+    
+    <!-- Colores de sombra -->
+    <color name="shadow_light">#1A000000</color>
+    <color name="shadow_medium">#33000000</color>
+    <color name="shadow_dark">#66000000</color>
+    
+    <!-- Colores de modo especial -->
+    <color name="special_mode_red">#FF0000</color>
+    <color name="special_mode_dark">#1A1A1A</color>
+    <color name="special_mode_accent">#FF6B9D</color>
+    
+    <!-- Colores del avatar -->
+    <color name="avatar_background">#FFFFFF</color>
+    <color name="avatar_border">#E0E0E0</color>
+    <color name="avatar_shadow">#40000000</color>
+    
+    <!-- Colores adicionales para Material Design 3 -->
+    <color name="background">#FAFAFA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F5F5F5</color>
+    <color name="primary_container">#FFE1F0</color>
+    <color name="secondary_container">#E0F2F1</color>
+    <color name="error">#F44336</color>
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="info">#2196F3</color>
+    <color name="ripple">#1F000000</color>
+    <color name="special_mode_primary">#FF6B9D</color>
+    <color name="special_mode_primary_dark">#E55A8A</color>
+    <color name="special_mode_secondary">#4ECDC4</color>
+    <color name="special_mode_secondary_dark">#45B7AF</color>
+    <color name="special_mode_surface">#FFF0F5</color>
+</resources>
