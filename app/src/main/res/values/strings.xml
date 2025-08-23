@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ritsu AI</string>
+    <string name="accessibility_service_label">Servicio de Accesibilidad de Ritsu AI</string>
+    
+    <!-- Actividad principal -->
+    <string name="main_title">Ritsu AI</string>
+    <string name="main_subtitle">Tu asistente personal de IA</string>
+    
+    <!-- Botones principales -->
+    <string name="btn_chat">💬 Chat</string>
+    <string name="btn_clothing">👗 Ropa</string>
+    <string name="btn_avatar">🎭 Avatar</string>
+    <string name="btn_settings">⚙️ Ajustes</string>
+    
+    <!-- Control del avatar -->
+    <string name="btn_show_avatar">Mostrar Avatar</string>
+    <string name="btn_hide_avatar">Ocultar Avatar</string>
+    <string name="btn_start_floating">Iniciar Avatar Flotante</string>
+    <string name="btn_stop_floating">Detener Avatar Flotante</string>
+    
+    <!-- Estado del sistema -->
+    <string name="system_status_title">Estado del Sistema</string>
+    <string name="permission_basic">Permisos básicos</string>
+    <string name="permission_accessibility">Servicio de accesibilidad</string>
+    <string name="permission_overlay">Permiso de superposición</string>
+    <string name="permission_granted">✅ Concedidos</string>
+    <string name="permission_denied">❌ No concedidos</string>
+    <string name="permission_not_activated">❌ No activado</string>
+    
+    <!-- Configuración de permisos -->
+    <string name="btn_configure_permissions">Configurar Permisos</string>
+    <string name="btn_request_permissions">Solicitar Permisos</string>
+    
+    <!-- Información del sistema -->
+    <string name="system_info_title">Información del Sistema</string>
+    <string name="app_version">Ritsu AI v1.0</string>
+    <string name="android_version">Android %1$s</string>
+    <string name="api_level">API Level %1$d</string>
+    
+    <!-- Diálogos -->
+    <string name="dialog_chat_title">Chat con Ritsu</string>
+    <string name="dialog_settings_title">Ajustes</string>
+    <string name="dialog_clothing_title">Generador de Ropa</string>
+    <string name="dialog_close">Cerrar</string>
+    <string name="dialog_ok">Aceptar</string>
+    <string name="dialog_cancel">Cancelar</string>
+    
+    <!-- Chat -->
+    <string name="chat_placeholder">Escribe tu mensaje aquí...</string>
+    <string name="chat_send">Enviar</string>
+    <string name="chat_voice">🎤</string>
+    <string name="chat_ritsu_typing">Ritsu está escribiendo...</string>
+    
+    <!-- Generador de ropa -->
+    <string name="clothing_prompt_placeholder">Describe la ropa que quieres que genere...</string>
+    <string name="clothing_generate">Generar Ropa</string>
+    <string name="clothing_generating">Generando...</string>
+    <string name="clothing_category_casual">Casual</string>
+    <string name="clothing_category_formal">Formal</string>
+    <string name="clothing_category_sport">Deportiva</string>
+    <string name="clothing_category_special">Especial</string>
+    <string name="clothing_category_uncensored">Sin Censura</string>
+    
+    <!-- Ajustes -->
+    <string name="settings_personality">Personalidad</string>
+    <string name="settings_voice">Voz</string>
+    <string name="settings_avatar">Avatar</string>
+    <string name="settings_ai">Configuración de IA</string>
+    <string name="settings_permissions">Permisos</string>
+    <string name="settings_about">Acerca de</string>
+    
+    <!-- Personalidad -->
+    <string name="personality_name">Nombre</string>
+    <string name="personality_description">Descripción</string>
+    <string name="personality_voice">Voz</string>
+    <string name="personality_style">Estilo del avatar</string>
+    <string name="personality_save">Guardar Personalidad</string>
+    
+    <!-- Voz -->
+    <string name="voice_language">Idioma</string>
+    <string name="voice_speed">Velocidad</string>
+    <string name="voice_pitch">Tono</string>
+    <string name="voice_test">Probar Voz</string>
+    
+    <!-- Avatar -->
+    <string name="avatar_size">Tamaño</string>
+    <string name="avatar_position">Posición</string>
+    <string name="avatar_behavior">Comportamiento</string>
+    <string name="avatar_uncensored_mode">Modo Sin Censura</string>
+    <string name="avatar_uncensored_key">Palabra Clave</string>
+    
+    <!-- IA -->
+    <string name="ai_openai_key">Clave de OpenAI</string>
+    <string name="ai_model">Modelo</string>
+    <string name="ai_temperature">Temperatura</string>
+    <string name="ai_max_tokens">Máximo de tokens</string>
+    <string name="ai_save">Guardar Configuración</string>
+    
+    <!-- Permisos -->
+    <string name="permission_accessibility_desc">Permite a Ritsu controlar otras aplicaciones</string>
+    <string name="permission_overlay_desc">Permite a Ritsu aparecer sobre otras apps</string>
+    <string name="permission_admin_desc">Permite a Ritsu controlar el sistema</string>
+    <string name="permission_storage_desc">Permite a Ritsu acceder a archivos</string>
+    <string name="permission_microphone_desc">Permite a Ritsu escuchar comandos de voz</string>
+    <string name="permission_camera_desc">Permite a Ritsu usar la cámara</string>
+    <string name="permission_contacts_desc">Permite a Ritsu acceder a contactos</string>
+    <string name="permission_sms_desc">Permite a Ritsu enviar mensajes</string>
+    <string name="permission_call_desc">Permite a Ritsu hacer llamadas</string>
+    
+    <!-- Notificaciones -->
+    <string name="notification_avatar_title">Ritsu AI</string>
+    <string name="notification_avatar_text">Avatar flotante activo</string>
+    <string name="notification_ai_title">Ritsu AI</string>
+    <string name="notification_ai_text">Procesando comando...</string>
+    <string name="notification_system_title">Ritsu Sistema</string>
+    <string name="notification_system_text">Actualización del sistema</string>
+    
+    <!-- Mensajes de error -->
+    <string name="error_permissions_required">Se requieren permisos para que Ritsu funcione correctamente</string>
+    <string name="error_accessibility_not_enabled">El servicio de accesibilidad no está habilitado</string>
+    <string name="error_overlay_permission_denied">El permiso de superposición fue denegado</string>
+    <string name="error_openai_key_missing">La clave de OpenAI no está configurada</string>
+    <string name="error_network">Error de conexión. Verifica tu conexión a internet</string>
+    <string name="error_unknown">Error desconocido. Inténtalo de nuevo</string>
+    
+    <!-- Mensajes de éxito -->
+    <string name="success_permissions_granted">¡Todos los permisos han sido concedidos!</string>
+    <string name="success_accessibility_enabled">¡Servicio de accesibilidad habilitado!</string>
+    <string name="success_overlay_permission_granted">¡Permiso de superposición concedido!</string>
+    <string name="success_avatar_started">¡Avatar flotante iniciado!</string>
+    <string name="success_avatar_stopped">¡Avatar flotante detenido!</string>
+    <string name="success_clothing_generated">¡Ropa generada exitosamente!</string>
+    <string name="success_settings_saved">¡Configuración guardada!</string>
+    
+    <!-- Comandos de voz -->
+    <string name="voice_command_open_app">Abrir aplicación</string>
+    <string name="voice_command_call">Llamar a</string>
+    <string name="voice_command_message">Enviar mensaje a</string>
+    <string name="voice_command_photo">Tomar foto</string>
+    <string name="voice_command_music">Reproducir música</string>
+    <string name="voice_command_reminder">Establecer recordatorio</string>
+    <string name="voice_command_clothing">Generar ropa</string>
+    <string name="voice_command_outfit">Generar outfit</string>
+    
+    <!-- Expresiones del avatar -->
+    <string name="expression_neutral">Neutral</string>
+    <string name="expression_happy">Feliz</string>
+    <string name="expression_sad">Triste</string>
+    <string name="expression_angry">Enojada</string>
+    <string name="expression_surprised">Sorprendida</string>
+    <string name="expression_thinking">Pensando</string>
+    <string name="expression_working">Trabajando</string>
+    <string name="expression_flirty">Coqueta</string>
+    
+    <!-- Categorías de ropa -->
+    <string name="clothing_casual">Casual</string>
+    <string name="clothing_formal">Formal</string>
+    <string name="clothing_sport">Deportiva</string>
+    <string name="clothing_special">Especial</string>
+    <string name="clothing_uncensored">Sin Censura</string>
+    
+    <!-- Acerca de -->
+    <string name="about_title">Acerca de Ritsu AI</string>
+    <string name="about_description">Ritsu AI es una inteligencia artificial avanzada inspirada en el personaje de Assassination Classroom. Con capacidades de autoaprendizaje, control total del dispositivo y un avatar anime kawaii expresivo.</string>
+    <string name="about_version">Versión 1.0</string>
+    <string name="about_developer">Desarrollado con ❤️</string>
+    <string name="about_license">Licencia: Uso personal y educativo</string>
+    
+    <!-- Tutorial -->
+    <string name="tutorial_welcome">¡Bienvenido a Ritsu AI!</string>
+    <string name="tutorial_step1">Paso 1: Concede los permisos necesarios</string>
+    <string name="tutorial_step2">Paso 2: Activa el servicio de accesibilidad</string>
+    <string name="tutorial_step3">Paso 3: Concede permiso de superposición</string>
+    <string name="tutorial_step4">Paso 4: ¡Disfruta de Ritsu!</string>
+    <string name="tutorial_next">Siguiente</string>
+    <string name="tutorial_previous">Anterior</string>
+    <string name="tutorial_finish">Finalizar</string>
+    <string name="tutorial_skip">Saltar</string>
+</resources>

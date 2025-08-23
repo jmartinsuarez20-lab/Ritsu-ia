@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales de Ritsu -->
+    <color name="ritsu_primary">#FF6B9D</color>
+    <color name="ritsu_secondary">#FF8FB1</color>
+    <color name="ritsu_accent">#FFB3D1</color>
+    
+    <!-- Colores del avatar -->
+    <color name="ritsu_skin">#FFE4C4</color>
+    <color name="ritsu_hair">#8B4513</color>
+    <color name="ritsu_eyes">#4169E1</color>
+    <color name="ritsu_mouth">#DC143C</color>
+    <color name="ritsu_blush">#FFB6C1</color>
+    
+    <!-- Colores de ropa -->
+    <color name="clothing_blue">#1E90FF</color>
+    <color name="clothing_red">#DC143C</color>
+    <color name="clothing_green">#32CD32</color>
+    <color name="clothing_purple">#9370DB</color>
+    <color name="clothing_pink">#FF69B4</color>
+    <color name="clothing_yellow">#FFD700</color>
+    <color name="clothing_black">#000000</color>
+    <color name="clothing_white">#FFFFFF</color>
+    
+    <!-- Colores del sistema -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Colores de Material Design -->
+    <color name="md_theme_light_primary">#FF6B9D</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#FFE4C4</color>
+    <color name="md_theme_light_onPrimaryContainer">#000000</color>
+    <color name="md_theme_light_secondary">#FF8FB1</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#FFB3D1</color>
+    <color name="md_theme_light_onSecondaryContainer">#000000</color>
+    <color name="md_theme_light_tertiary">#FFB3D1</color>
+    <color name="md_theme_light_onTertiary">#000000</color>
+    <color name="md_theme_light_tertiaryContainer">#FFE4C4</color>
+    <color name="md_theme_light_onTertiaryContainer">#000000</color>
+    <color name="md_theme_light_error">#BA1A1A</color>
+    <color name="md_theme_light_errorContainer">#FFDAD6</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_onErrorContainer">#410002</color>
+    <color name="md_theme_light_background">#FFFDFF</color>
+    <color name="md_theme_light_onBackground">#1A1C1E</color>
+    <color name="md_theme_light_surface">#FFFDFF</color>
+    <color name="md_theme_light_onSurface">#1A1C1E</color>
+    <color name="md_theme_light_surfaceVariant">#DEE3EB</color>
+    <color name="md_theme_light_onSurfaceVariant">#42474E</color>
+    <color name="md_theme_light_outline">#72777F</color>
+    <color name="md_theme_light_inverseOnSurface">#F1F0F4</color>
+    <color name="md_theme_light_inverseSurface">#2F3033</color>
+    <color name="md_theme_light_inversePrimary">#FFB3D1</color>
+    <color name="md_theme_light_shadow">#000000</color>
+    <color name="md_theme_light_surfaceTint">#FF6B9D</color>
+    <color name="md_theme_light_outlineVariant">#C2C7CF</color>
+    <color name="md_theme_light_scrim">#000000</color>
+    
+    <!-- Colores oscuros -->
+    <color name="md_theme_dark_primary">#FFB3D1</color>
+    <color name="md_theme_dark_onPrimary">#000000</color>
+    <color name="md_theme_dark_primaryContainer">#FF6B9D</color>
+    <color name="md_theme_dark_onPrimaryContainer">#FFFFFF</color>
+    <color name="md_theme_dark_secondary">#FFB3D1</color>
+    <color name="md_theme_dark_onSecondary">#000000</color>
+    <color name="md_theme_dark_secondaryContainer">#FF8FB1</color>
+    <color name="md_theme_dark_onSecondaryContainer">#FFFFFF</color>
+    <color name="md_theme_dark_tertiary">#FFE4C4</color>
+    <color name="md_theme_dark_onTertiary">#000000</color>
+    <color name="md_theme_dark_tertiaryContainer">#FFB3D1</color>
+    <color name="md_theme_dark_onTertiaryContainer">#000000</color>
+    <color name="md_theme_dark_error">#FFB4AB</color>
+    <color name="md_theme_dark_errorContainer">#93000A</color>
+    <color name="md_theme_dark_onError">#690005</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+    <color name="md_theme_dark_background">#1A1C1E</color>
+    <color name="md_theme_dark_onBackground">#E2E2E6</color>
+    <color name="md_theme_dark_surface">#1A1C1E</color>
+    <color name="md_theme_dark_onSurface">#E2E2E6</color>
+    <color name="md_theme_dark_surfaceVariant">#42474E</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C2C7CF</color>
+    <color name="md_theme_dark_outline">#8C9198</color>
+    <color name="md_theme_dark_inverseOnSurface">#1A1C1E</color>
+    <color name="md_theme_dark_inverseSurface">#E2E2E6</color>
+    <color name="md_theme_dark_inversePrimary">#FF6B9D</color>
+    <color name="md_theme_dark_shadow">#000000</color>
+    <color name="md_theme_dark_surfaceTint">#FFB3D1</color>
+    <color name="md_theme_dark_outlineVariant">#42474E</color>
+    <color name="md_theme_dark_scrim">#000000</color>
+</resources>
