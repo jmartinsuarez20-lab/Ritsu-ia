@@ -50,6 +50,40 @@ data class AvatarConfig(
                 borderWidth = 2f
             )
         }
+        
+        fun fromContentValues(values: android.content.ContentValues): AvatarConfig {
+            return AvatarConfig(
+                id = values.getAsString("id") ?: "ritsu_avatar",
+                name = values.getAsString("name") ?: "Ritsu",
+                size = values.getAsInteger("size") ?: 200,
+                positionX = values.getAsFloat("positionX") ?: 100f,
+                positionY = values.getAsFloat("positionY") ?: 100f,
+                isVisible = values.getAsBoolean("isVisible") ?: true,
+                expression = values.getAsString("expression") ?: "neutral",
+                currentClothingId = values.getAsString("currentClothingId"),
+                isSpecialModeEnabled = values.getAsBoolean("isSpecialModeEnabled") ?: false,
+                animationSpeed = values.getAsFloat("animationSpeed") ?: 1.0f,
+                opacity = values.getAsFloat("opacity") ?: 1.0f,
+                scale = values.getAsFloat("scale") ?: 1.0f,
+                rotation = values.getAsFloat("rotation") ?: 0f,
+                isDraggable = values.getAsBoolean("isDraggable") ?: true,
+                isResizable = values.getAsBoolean("isResizable") ?: true,
+                autoHide = values.getAsBoolean("autoHide") ?: false,
+                autoHideDelay = values.getAsLong("autoHideDelay") ?: 5000L,
+                showShadow = values.getAsBoolean("showShadow") ?: true,
+                shadowColor = values.getAsInteger("shadowColor") ?: 0x80000000.toInt(),
+                shadowRadius = values.getAsFloat("shadowRadius") ?: 8f,
+                shadowOffsetX = values.getAsFloat("shadowOffsetX") ?: 2f,
+                shadowOffsetY = values.getAsFloat("shadowOffsetY") ?: 4f,
+                backgroundColor = values.getAsInteger("backgroundColor") ?: 0x00000000.toInt(),
+                borderColor = values.getAsInteger("borderColor") ?: 0x00000000.toInt(),
+                borderWidth = values.getAsFloat("borderWidth") ?: 0f,
+                cornerRadius = values.getAsFloat("cornerRadius") ?: 0f,
+                zIndex = values.getAsInteger("zIndex") ?: 1000,
+                createdAt = values.getAsLong("createdAt") ?: System.currentTimeMillis(),
+                updatedAt = values.getAsLong("updatedAt") ?: System.currentTimeMillis()
+            )
+        }
     }
     
     fun updatePosition(x: Float, y: Float): AvatarConfig {

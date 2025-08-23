@@ -54,6 +54,22 @@ data class LearningPattern(
                 context = context
             )
         }
+        
+        fun fromContentValues(values: android.content.ContentValues): LearningPattern {
+            return LearningPattern(
+                id = values.getAsString("id") ?: UUID.randomUUID().toString(),
+                patternType = PatternType.valueOf(values.getAsString("patternType") ?: "COMMAND"),
+                input = values.getAsString("input") ?: "",
+                output = values.getAsString("output") ?: "",
+                context = values.getAsString("context"),
+                confidence = values.getAsFloat("confidence") ?: 1.0f,
+                usageCount = values.getAsInteger("usageCount") ?: 1,
+                successRate = values.getAsFloat("successRate") ?: 1.0f,
+                lastUsed = values.getAsLong("lastUsed") ?: System.currentTimeMillis(),
+                createdAt = values.getAsLong("createdAt") ?: System.currentTimeMillis(),
+                updatedAt = values.getAsLong("updatedAt") ?: System.currentTimeMillis()
+            )
+        }
     }
     
     fun incrementUsage(success: Boolean = true): LearningPattern {

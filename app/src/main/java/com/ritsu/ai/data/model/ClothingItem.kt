@@ -54,6 +54,30 @@ data class ClothingItem(
                 isNude = true
             )
         }
+        
+        fun fromContentValues(values: android.content.ContentValues): ClothingItem {
+            return ClothingItem(
+                id = values.getAsString("id") ?: UUID.randomUUID().toString(),
+                name = values.getAsString("name") ?: "",
+                description = values.getAsString("description") ?: "",
+                category = ClothingCategory.valueOf(values.getAsString("category") ?: "TOP"),
+                style = ClothingStyle.valueOf(values.getAsString("style") ?: "CASUAL"),
+                color = ClothingColor.valueOf(values.getAsString("color") ?: "BLUE"),
+                pattern = ClothingPattern.valueOf(values.getAsString("pattern") ?: "PLAIN"),
+                season = ClothingSeason.valueOf(values.getAsString("season") ?: "ALL"),
+                formality = ClothingFormality.valueOf(values.getAsString("formality") ?: "CASUAL"),
+                imagePath = values.getAsString("imagePath"),
+                isGenerated = values.getAsBoolean("isGenerated") ?: false,
+                generationPrompt = values.getAsString("generationPrompt"),
+                isSpecialMode = values.getAsBoolean("isSpecialMode") ?: false,
+                isNude = values.getAsBoolean("isNude") ?: false,
+                isFavorite = values.getAsBoolean("isFavorite") ?: false,
+                usageCount = values.getAsInteger("usageCount") ?: 0,
+                lastUsed = values.getAsLong("lastUsed") ?: 0L,
+                createdAt = values.getAsLong("createdAt") ?: System.currentTimeMillis(),
+                updatedAt = values.getAsLong("updatedAt") ?: System.currentTimeMillis()
+            )
+        }
     }
     
     fun incrementUsage(): ClothingItem {
