@@ -40,6 +40,7 @@ Un asistente personal inteligente inspirado en el personaje de **Assassination C
 
 1. **Descargar APK:**
    - [Descarga Directa - Ritsu AI v1.0](https://github.com/jmartinsuarez20-lab/Ritsu-ia/releases/download/v1.0.0/ritsu-ai-v1.0.apk)
+   - [Release Completo](https://github.com/jmartinsuarez20-lab/Ritsu-ia/releases/tag/v1.0.0)
 
 2. **Habilitar Fuentes Desconocidas:**
    - Configuración → Seguridad → Fuentes desconocidas
