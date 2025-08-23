@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Directorio de archivos externos de la aplicación -->
+    <external-files-path name="external_files" path="." />
+    
+    <!-- Directorio de imágenes generadas -->
+    <external-files-path name="clothing_images" path="clothing/" />
+    
+    <!-- Directorio de avatares -->
+    <external-files-path name="avatar_images" path="avatar/" />
+    
+    <!-- Directorio de datos de IA -->
+    <external-files-path name="ai_data" path="ai/" />
+    
+    <!-- Directorio de logs -->
+    <external-files-path name="logs" path="logs/" />
+    
+    <!-- Directorio de caché -->
+    <external-files-path name="cache" path="cache/" />
+    
+    <!-- Directorio de descargas -->
+    <external-files-path name="downloads" path="downloads/" />
+    
+    <!-- Directorio de documentos -->
+    <external-files-path name="documents" path="documents/" />
+    
+    <!-- Directorio de música -->
+    <external-files-path name="music" path="music/" />
+    
+    <!-- Directorio de videos -->
+    <external-files-path name="videos" path="videos/" />
+    
+    <!-- Directorio de fotos -->
+    <external-files-path name="photos" path="photos/" />
+</paths>

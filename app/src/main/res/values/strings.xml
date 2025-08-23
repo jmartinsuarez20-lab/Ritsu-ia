@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ritsu AI</string>
+    <string name="app_subtitle">Tu asistente personal inteligente</string>
+    
+    <!-- Estados del sistema -->
+    <string name="system_status">Estado del Sistema</string>
+    <string name="permissions_status">Permisos del Sistema</string>
+    <string name="accessibility_status">Servicio de Accesibilidad</string>
+    <string name="overlay_status">Permiso de Superposición</string>
+    <string name="services_status">Servicios de IA</string>
+    
+    <!-- Estados -->
+    <string name="pending">❌ Pendientes</string>
+    <string name="granted">✅ Concedidos</string>
+    <string name="active">✅ Activos</string>
+    <string name="inactive">❌ Inactivos</string>
+    
+    <!-- Botones principales -->
+    <string name="start_ritsu">🚀 Iniciar Ritsu</string>
+    <string name="request_permissions">🔒 Solicitar Permisos</string>
+    <string name="accessibility">⚙️ Accesibilidad</string>
+    <string name="overlay_permission">🖼️ Superposición</string>
+    <string name="settings">⚙️ Configuración</string>
+    
+    <!-- Chat -->
+    <string name="test_chat">💬 Chat de Prueba</string>
+    <string name="type_message">Escribe un mensaje para Ritsu...</string>
+    <string name="send">Enviar</string>
+    
+    <!-- Avatar -->
+    <string name="avatar_settings">🎭 Configuración del Avatar</string>
+    <string name="change_clothes">👕 Cambiar Ropa</string>
+    
+    <!-- Información -->
+    <string name="information">ℹ️ Información</string>
+    <string name="info_description">Ritsu es una IA súper inteligente que vive en tu teléfono. Puede ayudarte con aplicaciones, mensajes, llamadas, fotos, música, calendario y mucho más. Solo necesitas configurar los permisos necesarios para que funcione completamente.</string>
+    
+    <!-- Iconos -->
+    <string name="ritsu_logo">Logo de Ritsu</string>
+    <string name="permissions_icon">Icono de permisos</string>
+    <string name="accessibility_icon">Icono de accesibilidad</string>
+    <string name="overlay_icon">Icono de superposición</string>
+    <string name="services_icon">Icono de servicios</string>
+    
+    <!-- Servicios -->
+    <string name="accessibility_service_label">Ritsu AI - Servicio de Accesibilidad</string>
+    <string name="accessibility_service_description">Este servicio permite a Ritsu controlar aplicaciones y funciones del dispositivo para ayudarte mejor.</string>
+    
+    <!-- Notificaciones -->
+    <string name="ritsu_notification_title">Ritsu AI</string>
+    <string name="ritsu_notification_text">Tu asistente personal está activo</string>
+    <string name="ai_service_notification_title">Servicio de IA</string>
+    <string name="ai_service_notification_text">Procesando solicitudes</string>
+    <string name="overlay_notification_title">Superposición</string>
+    <string name="overlay_notification_text">Avatar visible en pantalla</string>
+    
+    <!-- Mensajes de error -->
+    <string name="error_permissions_required">Se requieren permisos para continuar</string>
+    <string name="error_accessibility_required">Se requiere habilitar el servicio de accesibilidad</string>
+    <string name="error_overlay_required">Se requiere permiso para superponer en pantalla</string>
+    <string name="error_starting_ritsu">Error al iniciar Ritsu</string>
+    <string name="error_generating_response">Error al generar respuesta</string>
+    
+    <!-- Mensajes de éxito -->
+    <string name="success_permissions_granted">Todos los permisos concedidos</string>
+    <string name="success_accessibility_enabled">Servicio de accesibilidad habilitado</string>
+    <string name="success_overlay_granted">Permiso de superposición concedido</string>
+    <string name="success_ritsu_started">¡Ritsu está ahora viva en tu teléfono! 🎉</string>
+    
+    <!-- Configuración -->
+    <string name="settings_title">Configuración de Ritsu</string>
+    <string name="settings_general">General</string>
+    <string name="settings_avatar">Avatar</string>
+    <string name="settings_ai">Inteligencia Artificial</string>
+    <string name="settings_permissions">Permisos</string>
+    <string name="settings_about">Acerca de</string>
+    
+    <!-- Preferencias -->
+    <string name="pref_auto_start">Iniciar automáticamente</string>
+    <string name="pref_auto_start_summary">Iniciar Ritsu cuando se encienda el dispositivo</string>
+    <string name="pref_overlay_enabled">Habilitar superposición</string>
+    <string name="pref_overlay_enabled_summary">Mostrar avatar sobre otras aplicaciones</string>
+    <string name="pref_formal_language">Lenguaje formal</string>
+    <string name="pref_formal_language_summary">Usar lenguaje más formal en las respuestas</string>
+    <string name="pref_short_responses">Respuestas cortas</string>
+    <string name="pref_short_responses_summary">Preferir respuestas más concisas</string>
+    
+    <!-- Avatar -->
+    <string name="avatar_title">Configuración del Avatar</string>
+    <string name="avatar_appearance">Apariencia</string>
+    <string name="avatar_expressions">Expresiones</string>
+    <string name="avatar_clothing">Ropa</string>
+    <string name="avatar_animations">Animaciones</string>
+    
+    <!-- Ropa -->
+    <string name="clothing_title">Generador de Ropa</string>
+    <string name="clothing_description">Describe el estilo de ropa que quieres que Ritsu genere</string>
+    <string name="clothing_generate">Generar Ropa</string>
+    <string name="clothing_saved">Ropa Guardada</string>
+    <string name="clothing_style">Estilo</string>
+    <string name="clothing_color">Color</string>
+    <string name="clothing_pattern">Patrón</string>
+    
+    <!-- Estilos de ropa -->
+    <string name="clothing_style_casual">Casual</string>
+    <string name="clothing_style_elegant">Elegante</string>
+    <string name="clothing_style_sport">Deportivo</string>
+    <string name="clothing_style_school">Escolar</string>
+    <string name="clothing_style_formal">Formal</string>
+    <string name="clothing_style_beach">Playa</string>
+    <string name="clothing_style_winter">Invierno</string>
+    <string name="clothing_style_summer">Verano</string>
+    
+    <!-- Colores -->
+    <string name="clothing_color_pink">Rosa</string>
+    <string name="clothing_color_blue">Azul</string>
+    <string name="clothing_color_green">Verde</string>
+    <string name="clothing_color_red">Rojo</string>
+    <string name="clothing_color_yellow">Amarillo</string>
+    <string name="clothing_color_black">Negro</string>
+    <string name="clothing_color_white">Blanco</string>
+    <string name="clothing_color_gray">Gris</string>
+    <string name="clothing_color_purple">Morado</string>
+    <string name="clothing_color_orange">Naranja</string>
+    
+    <!-- Patrones -->
+    <string name="clothing_pattern_plain">Liso</string>
+    <string name="clothing_pattern_stripes">Rayas</string>
+    <string name="clothing_pattern_checkered">Cuadros</string>
+    <string name="clothing_pattern_floral">Flores</string>
+    <string name="clothing_pattern_polka">Puntos</string>
+    <string name="clothing_pattern_geometric">Geométrico</string>
+    <string name="clothing_pattern_animal">Animal</string>
+    <string name="clothing_pattern_abstract">Abstracto</string>
+    
+    <!-- Funcionalidades -->
+    <string name="feature_apps">Aplicaciones</string>
+    <string name="feature_messages">Mensajes</string>
+    <string name="feature_calls">Llamadas</string>
+    <string name="feature_photos">Fotos</string>
+    <string name="feature_music">Música</string>
+    <string name="feature_calendar">Calendario</string>
+    <string name="feature_files">Archivos</string>
+    <string name="feature_settings">Configuración</string>
+    
+    <!-- Comandos de ejemplo -->
+    <string name="example_commands">Comandos de Ejemplo</string>
+    <string name="example_open_app">"Abre WhatsApp"</string>
+    <string name="example_send_message">"Envía un mensaje a Juan"</string>
+    <string name="example_take_photo">"Toma una foto"</string>
+    <string name="example_play_music">"Reproduce música"</string>
+    <string name="example_set_reminder">"Recuérdame comprar leche"</string>
+    <string name="example_change_clothes">"Cámbiate a un vestido elegante azul"</string>
+    
+    <!-- Modo especial -->
+    <string name="special_mode_title">Modo Especial</string>
+    <string name="special_mode_description">Funcionalidades avanzadas del avatar</string>
+    <string name="special_mode_unlock">Desbloquear con palabra clave</string>
+    <string name="special_mode_keyword">Palabra clave</string>
+    <string name="special_mode_enabled">Modo especial habilitado</string>
+    <string name="special_mode_disabled">Modo especial deshabilitado</string>
+    
+    <!-- Aprendizaje -->
+    <string name="learning_title">Aprendizaje de Ritsu</string>
+    <string name="learning_description">Ritsu aprende de tus preferencias y comportamiento</string>
+    <string name="learning_preferences">Preferencias aprendidas</string>
+    <string name="learning_patterns">Patrones de uso</string>
+    <string name="learning_reset">Reiniciar aprendizaje</string>
+    
+    <!-- Acerca de -->
+    <string name="about_title">Acerca de Ritsu AI</string>
+    <string name="about_version">Versión 1.0.0</string>
+    <string name="about_description">Ritsu es una IA súper inteligente inspirada en el personaje de Assassination Classroom. Diseñada para ser tu asistente personal completo en Android.</string>
+    <string name="about_developer">Desarrollado con ❤️ para usuarios Android</string>
+    <string name="about_features">Características principales:</string>
+    <string name="about_feature_1">• Control total del dispositivo</string>
+    <string name="about_feature_2">• Avatar anime kawaii personalizable</string>
+    <string name="about_feature_3">• Generación automática de ropa</string>
+    <string name="about_feature_4">• Inteligencia artificial avanzada</string>
+    <string name="about_feature_5">• Aprendizaje automático</string>
+    
+    <!-- Permisos -->
+    <string name="permissions_title">Permisos Requeridos</string>
+    <string name="permissions_description">Ritsu necesita estos permisos para funcionar completamente:</string>
+    <string name="permission_storage">Almacenamiento</string>
+    <string name="permission_camera">Cámara</string>
+    <string name="permission_microphone">Micrófono</string>
+    <string name="permission_contacts">Contactos</string>
+    <string name="permission_calendar">Calendario</string>
+    <string name="permission_location">Ubicación</string>
+    <string name="permission_phone">Teléfono</string>
+    <string name="permission_sms">SMS</string>
+    <string name="permission_notifications">Notificaciones</string>
+    <string name="permission_accessibility">Accesibilidad</string>
+    <string name="permission_overlay">Superposición</string>
+    
+    <!-- Explicaciones de permisos -->
+    <string name="permission_storage_explanation">Para guardar y gestionar archivos, fotos y ropa generada</string>
+    <string name="permission_camera_explanation">Para tomar fotos y reconocer objetos</string>
+    <string name="permission_microphone_explanation">Para reconocimiento de voz y comandos</string>
+    <string name="permission_contacts_explanation">Para gestionar contactos y hacer llamadas</string>
+    <string name="permission_calendar_explanation">Para gestionar calendario y recordatorios</string>
+    <string name="permission_location_explanation">Para servicios basados en ubicación</string>
+    <string name="permission_phone_explanation">Para hacer y recibir llamadas</string>
+    <string name="permission_sms_explanation">Para enviar y recibir mensajes</string>
+    <string name="permission_notifications_explanation">Para leer y responder notificaciones</string>
+    <string name="permission_accessibility_explanation">Para controlar otras aplicaciones</string>
+    <string name="permission_overlay_explanation">Para mostrar el avatar sobre otras apps</string>
+    
+    <!-- Tutorial -->
+    <string name="tutorial_title">Tutorial de Ritsu</string>
+    <string name="tutorial_step_1">Paso 1: Conceder permisos</string>
+    <string name="tutorial_step_2">Paso 2: Habilitar accesibilidad</string>
+    <string name="tutorial_step_3">Paso 3: Permitir superposición</string>
+    <string name="tutorial_step_4">Paso 4: ¡Iniciar Ritsu!</string>
+    <string name="tutorial_next">Siguiente</string>
+    <string name="tutorial_previous">Anterior</string>
+    <string name="tutorial_skip">Saltar</string>
+    <string name="tutorial_finish">Finalizar</string>
+    
+    <!-- Ayuda -->
+    <string name="help_title">Ayuda y Soporte</string>
+    <string name="help_faq">Preguntas Frecuentes</string>
+    <string name="help_contact">Contacto</string>
+    <string name="help_feedback">Enviar Feedback</string>
+    <string name="help_report_bug">Reportar Bug</string>
+    <string name="help_feature_request">Solicitar Función</string>
+    
+    <!-- FAQ -->
+    <string name="faq_1_question">¿Qué es Ritsu AI?</string>
+    <string name="faq_1_answer">Ritsu es una IA súper inteligente que vive en tu teléfono Android. Puede ayudarte con aplicaciones, mensajes, llamadas, fotos, música, calendario y mucho más.</string>
+    
+    <string name="faq_2_question">¿Por qué necesita tantos permisos?</string>
+    <string name="faq_2_answer">Ritsu necesita estos permisos para poder controlar completamente tu dispositivo y ayudarte con todas las tareas que solicitas.</string>
+    
+    <string name="faq_3_question">¿Es seguro usar Ritsu?</string>
+    <string name="faq_3_answer">Sí, Ritsu es completamente seguro. No recopila datos personales ni los envía a servidores externos. Todo se procesa localmente en tu dispositivo.</string>
+    
+    <string name="faq_4_question">¿Puedo personalizar el avatar?</string>
+    <string name="faq_4_answer">¡Absolutamente! Puedes cambiar la ropa, expresiones, y hasta desbloquear un modo especial con funcionalidades avanzadas.</string>
+    
+    <string name="faq_5_question">¿Ritsu aprende de mí?</string>
+    <string name="faq_5_answer">Sí, Ritsu utiliza aprendizaje automático para adaptarse a tus preferencias y mejorar sus respuestas con el tiempo.</string>
+    
+    <!-- Mensajes del sistema -->
+    <string name="system_message_welcome">¡Hola! Soy Ritsu, tu asistente personal. Estoy aquí para ayudarte con todo lo que necesites en tu dispositivo.</string>
+    <string name="system_message_ready">¡Perfecto! Estoy lista para ayudarte. ¿En qué puedo asistirte hoy?</string>
+    <string name="system_message_learning">Estoy aprendiendo de tus preferencias para servirte mejor.</string>
+    <string name="system_message_error">Lo siento, tuve un pequeño problema. ¿Podrías intentarlo de nuevo?</string>
+    
+</resources>
