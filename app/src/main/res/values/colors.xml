@@ -39,6 +39,10 @@
     <color name="md_theme_light_onTertiary">#000000</color>
     <color name="md_theme_light_tertiaryContainer">#FFE4C4</color>
     <color name="md_theme_light_onTertiaryContainer">#000000</color>
+    <color name="ritsu_primaryContainer">#FFE4C4</color>
+    <color name="ritsu_secondaryContainer">#FFB3D1</color>
+    <color name="ritsu_tertiary">#FFB3D1</color>
+    <color name="ritsu_tertiaryContainer">#FFE4C4</color>
     <color name="md_theme_light_error">#BA1A1A</color>
     <color name="md_theme_light_errorContainer">#FFDAD6</color>
     <color name="md_theme_light_onError">#FFFFFF</color>
