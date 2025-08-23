@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="Servicio de Ritsu para automatizar respuestas de WhatsApp"
+    android:packageNames="com.whatsapp,com.whatsapp.w4b"
+    android:accessibilityEventTypes="typeNotificationStateChanged|typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFlags="flagDefault|flagReportViewIds|flagRequestTouchExplorationMode"
+    android:accessibilityFeedbackType="feedbackSpoken"
+    android:canRetrieveWindowContent="true" />

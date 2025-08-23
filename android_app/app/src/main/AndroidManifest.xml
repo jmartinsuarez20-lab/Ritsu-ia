@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ritsuai.assistant">
+
+    <!-- Permisos críticos para todas las funcionalidades -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    
+    <!-- Acceso a contactos -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    
+    <!-- Acceso a SMS y mensajería -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    
+    <!-- Acceso a internet y red -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    
+    <!-- Acceso al sistema -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.DEVICE_ADMIN" />
+    
+    <!-- Acceso a archivos -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <!-- Servicios en primer plano -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!-- Accesibilidad para interactuar con otras apps -->
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+    
+    <!-- Permisos adicionales para funcionalidades kawaii y expresivas -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.NFC" />
+    
+    <!-- Permisos para control total de aplicaciones -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" 
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" 
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.GET_TASKS" 
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    
+    <!-- Para overlay en todas las pantallas -->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" 
+        tools:ignore="ProtectedPermissions" />
+    
+    <!-- Para configuración avanzada del avatar -->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" 
+        tools:ignore="ProtectedPermissions" />
+    
+    <!-- Para autoaprendizaje y análisis de comportamiento -->
+    <uses-permission android:name="android.permission.READ_LOGS" 
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.DUMP" 
+        tools:ignore="ProtectedPermissions" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.RitsuAI"
+        android:name=".RitsuApplication">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.RitsuAI.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Servicio principal de la IA -->
+        <service
+            android:name=".services.RitsuAIService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="phoneCall|microphone" />
+        
+        <!-- Servicio para manejo de llamadas -->
+        <service
+            android:name=".services.CallHandlerService"
+            android:permission="android.permission.BIND_INCALL_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.telecom.InCallService" />
+            </intent-filter>
+        </service>
+        
+        <!-- Receptor para llamadas entrantes -->
+        <receiver
+            android:name=".receivers.CallReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- Servicio de accesibilidad para WhatsApp -->
+        <service
+            android:name=".services.WhatsAppAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+        
+        <!-- Servicio de avatar kawaii flotante -->
+        <service
+            android:name=".services.KawaiiAvatarService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+        
+        <!-- Servicio de control de aplicaciones -->
+        <service
+            android:name=".services.AppControlService"
+            android:enabled="true"
+            android:exported="false" />
+        
+        <!-- Servicio de generación de ropa -->
+        <service
+            android:name=".services.OutfitGenerationService"
+            android:enabled="true"
+            android:exported="false" />
+        
+        <!-- Actividad para configuración del avatar -->
+        <activity
+            android:name=".ui.AvatarCustomizationActivity"
+            android:theme="@style/Theme.RitsuAI.Kawaii"
+            android:exported="false" />
+        
+        <!-- Actividad para modo sin censura (con protección) -->
+        <activity
+            android:name=".ui.UncensoredModeActivity"
+            android:theme="@style/Theme.RitsuAI.Private"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true" />
+        
+    </application>
+
+</manifest>
