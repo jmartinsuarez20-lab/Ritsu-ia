@@ -1,0 +1,50 @@
+<resources>
+    
+    <!-- Nombre de la aplicación -->
+    <string name="app_name">Ritsu AI Assistant</string>
+    
+    <!-- Pantalla principal -->
+    <string name="main_title">Ritsu AI Assistant 🌸</string>
+    <string name="status_inactive">Toca \'Activar Ritsu\' para despertar a tu asistente</string>
+    <string name="status_active">Ritsu está despierta y lista para ayudarte! 🌸</string>
+    <string name="btn_activate">Activar Ritsu 🌸</string>
+    <string name="btn_test_chat">Probar Chat</string>
+    <string name="btn_settings">Configurar</string>
+    
+    <!-- Mensajes de Ritsu -->
+    <string name="ritsu_greeting">¡Hola! Soy Ritsu, tu asistente personal IA. Esté aquí para ayudarte con llamadas, mensajes de WhatsApp y mucho más. ¡Activa mis servicios para comenzar! 🌸</string>
+    <string name="ritsu_test_response">Ritsu: ¡Hola! Soy Ritsu, tu asistente personal. Esté aquí para ayudarte con lo que necesites. ¿Cómo puedo asistirte hoy? 🌸</string>
+    
+    <!-- Notificaciones -->
+    <string name="notification_title">Ritsu AI Activa 🌸</string>
+    <string name="notification_text">Lista para ayudarte con llamadas y mensajes</string>
+    
+    <!-- Permisos -->
+    <string name="permissions_required">Ritsu necesita todos los permisos para funcionar correctamente</string>
+    <string name="accessibility_instruction">Por favor activa el servicio de accesibilidad de Ritsu para WhatsApp</string>
+    
+    <!-- Llamadas -->
+    <string name="incoming_call">Llamada entrante de: %s</string>
+    <string name="call_answered">Ritsu respondió la llamada</string>
+    <string name="call_ended">Llamada terminada</string>
+    
+    <!-- WhatsApp -->
+    <string name="whatsapp_new_message">Nuevo mensaje de WhatsApp: %s</string>
+    <string name="whatsapp_response_sent">Ritsu envió mensaje: %s</string>
+    
+    <!-- Estados emocionales -->
+    <string name="mood_happy">Feliz</string>
+    <string name="mood_sad">Triste</string>
+    <string name="mood_excited">Emocionada</string>
+    <string name="mood_curious">Curiosa</string>
+    <string name="mood_thoughtful">Pensativa</string>
+    <string name="mood_cheerful">Alegre</string>
+    <string name="mood_concerned">Preocupada</string>
+    
+    <!-- Mensajes del sistema -->
+    <string name="service_started">Servicio de Ritsu iniciado</string>
+    <string name="service_stopped">Servicio de Ritsu detenido</string>
+    <string name="loading">Cargando...</string>
+    <string name="error">Error</string>
+    
+</resources>
