@@ -1,247 +1,261 @@
-# 📱 Guía de Instalación de Ritsu AI
+# 📱 Instalación de Ritsu AI - Guía Completa
 
-## 🎯 Descripción General
+## 🎯 Resumen
+Ritsu AI es una aplicación Android que requiere permisos especiales para funcionar completamente. Esta guía te llevará paso a paso por todo el proceso de instalación y configuración.
 
-Ritsu AI es una aplicación de inteligencia artificial avanzada para Android que funciona como un asistente personal completo. La aplicación incluye un avatar anime kawaii personalizable, control total del dispositivo, generación automática de ropa, y capacidades de aprendizaje automático.
+## 📋 Requisitos Previos
 
-## ⚠️ Requisitos Previos
+### Dispositivo
+- **Android 7.0 (API 24) o superior**
+- **2GB RAM mínimo** (4GB recomendado)
+- **500MB espacio libre** en almacenamiento interno
+- **Pantalla táctil** funcional
 
-### 📱 Dispositivo
-- **Sistema Operativo**: Android 8.0 (API 26) o superior
-- **RAM**: Mínimo 4GB, recomendado 6GB o más
-- **Almacenamiento**: Mínimo 2GB de espacio libre
-- **Arquitectura**: ARM64, ARM32, x86, o x86_64
+### Permisos Necesarios
+La aplicación requiere los siguientes permisos para funcionar completamente:
 
-### 🔧 Software
-- **Java**: JDK 8 o superior
-- **Android SDK**: API 26 o superior
-- **Gradle**: Versión 7.0 o superior
+| Permiso | Propósito | Obligatorio |
+|---------|-----------|-------------|
+| Accesibilidad | Controlar otras aplicaciones | ✅ Sí |
+| Superposición | Mostrar avatar sobre apps | ✅ Sí |
+| Almacenamiento | Guardar ropa y datos | ✅ Sí |
+| Cámara | Tomar fotos | ⚠️ Opcional |
+| Micrófono | Reconocimiento de voz | ⚠️ Opcional |
+| Teléfono | Hacer llamadas | ⚠️ Opcional |
+| SMS | Enviar mensajes | ⚠️ Opcional |
+| Contactos | Gestionar contactos | ⚠️ Opcional |
+| Calendario | Gestionar eventos | ⚠️ Opcional |
+| Ubicación | Servicios basados en ubicación | ⚠️ Opcional |
+| WiFi/Bluetooth | Control de conectividad | ⚠️ Opcional |
 
 ## 🚀 Pasos de Instalación
 
-### 1. Preparación del Entorno
+### Paso 1: Descargar el APK
+1. Descarga el archivo `ritsu-ai-debug.apk` desde la carpeta `build/outputs/apk/debug/`
+2. Verifica que el archivo esté completo (tamaño aproximado: 15-20MB)
 
-#### Configurar Variables de Entorno
-```bash
-# En Linux/macOS
-export ANDROID_HOME=/path/to/android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+### Paso 2: Habilitar Instalación de Fuentes Desconocidas
+1. Ve a **Configuración** > **Seguridad**
+2. Busca la opción **"Fuentes desconocidas"** o **"Instalar aplicaciones de fuentes desconocidas"**
+3. **Habilita** esta opción
+4. Si tu Android es 8.0+, también habilita **"Instalar aplicaciones de fuentes desconocidas"** para el navegador o gestor de archivos que uses
 
-# En Windows
-set ANDROID_HOME=C:\path\to\android\sdk
-set PATH=%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools
-```
+### Paso 3: Instalar la Aplicación
+1. Abre el archivo APK descargado
+2. Toca **"Instalar"**
+3. Espera a que termine la instalación
+4. Toca **"Abrir"** cuando termine
 
-#### Verificar Instalaciones
-```bash
-# Verificar Java
-java -version
+### Paso 4: Configuración Inicial
+1. **Primera Ejecución**: La app te mostrará un tutorial
+2. **Configuración Básica**:
+   - Selecciona el idioma (español)
+   - Configura el tamaño del avatar
+   - Prueba la funcionalidad de voz
+3. **Permisos Básicos**: Concede los permisos que solicite
 
-# Verificar Android SDK
-adb version
+## ⚙️ Configuración de Permisos Especiales
 
-# Verificar Gradle
-./gradlew --version
-```
+### Permiso de Accesibilidad (OBLIGATORIO)
+Este permiso es **esencial** para que Ritsu pueda controlar otras aplicaciones.
 
-### 2. Compilación del Proyecto
+1. Ve a **Configuración** > **Accesibilidad**
+2. Busca **"Ritsu AI"** en la lista de servicios
+3. Toca en **"Ritsu AI"**
+4. **Habilita** el servicio
+5. Confirma la advertencia de seguridad
+6. Verifica que aparezca como **"Activado"**
 
-#### Clonar o Descargar el Código
-```bash
-# Si tienes Git
-git clone <repository-url>
-cd ritsu-ai
+### Permiso de Superposición (OBLIGATORIO)
+Este permiso permite que el avatar de Ritsu aparezca sobre otras aplicaciones.
 
-# O descargar y extraer el ZIP
-unzip ritsu-ai.zip
-cd ritsu-ai
-```
+1. Ve a **Configuración** > **Aplicaciones**
+2. Busca **"Ritsu AI"**
+3. Toca en **"Permisos"**
+4. Busca **"Mostrar sobre otras aplicaciones"** o **"Superposición"**
+5. **Habilita** este permiso
+6. Confirma la advertencia de seguridad
 
-#### Compilar la Aplicación
-```bash
-# Dar permisos al script de compilación
-chmod +x build.sh
+### Permisos Opcionales
+Para funcionalidades avanzadas, también puedes conceder:
 
-# Ejecutar compilación automática
-./build.sh
+- **Cámara**: Para tomar fotos
+- **Micrófono**: Para comandos de voz
+- **Almacenamiento**: Para guardar ropa generada
+- **Teléfono**: Para hacer llamadas
+- **SMS**: Para enviar mensajes
+- **Contactos**: Para gestionar contactos
+- **Calendario**: Para gestionar eventos
 
-# O compilar manualmente
-./gradlew clean
-./gradlew assembleDebug
-```
+## 🎮 Configuración del Avatar
 
-#### Verificar Compilación
-- El APK se generará en: `app/build/outputs/apk/debug/app-debug.apk`
-- Verificar que el archivo existe y tiene un tamaño razonable (>10MB)
+### Posición y Tamaño
+1. **Mover Avatar**: Toca y arrastra el avatar por la pantalla
+2. **Cambiar Tamaño**: Pellizca para redimensionar
+3. **Ocultar/Mostrar**: Doble toque en el avatar
 
-### 3. Instalación en el Dispositivo
+### Expresiones
+- Toca el avatar para cambiar su expresión
+- Las expresiones cambian automáticamente según el contexto
 
-#### Preparar el Dispositivo Android
-1. **Habilitar Opciones de Desarrollador**
-   - Ir a `Configuración` → `Acerca del teléfono`
-   - Tocar 7 veces en `Número de compilación`
-   - Volver a `Configuración` → `Opciones de desarrollador`
+### Configuración Avanzada
+1. Abre la aplicación Ritsu AI
+2. Ve a **Configuración** > **Avatar**
+3. Ajusta:
+   - Tamaño por defecto
+   - Posición inicial
+   - Opacidad
+   - Animaciones
 
-2. **Habilitar Depuración USB**
-   - En `Opciones de desarrollador` → `Depuración USB` → `Activado`
+## 👗 Configuración del Sistema de Ropa
 
-3. **Habilitar Instalación de Fuentes Desconocidas**
-   - En `Opciones de desarrollador` → `Instalar apps de fuentes desconocidas`
-   - Seleccionar tu explorador de archivos o aplicación de transferencia
+### Generar Ropa
+1. Di o escribe: *"Ritsu, genera un vestido elegante rosa"*
+2. Ritsu creará la ropa automáticamente
+3. La ropa se guardará en tu colección
 
-#### Transferir e Instalar el APK
-1. **Transferir el APK**
-   - Conectar el dispositivo por USB
-   - Copiar `app-debug.apk` al dispositivo
-   - O usar ADB: `adb install app-debug.apk`
+### Guardar Preferencias
+1. Ve a **Configuración** > **Ropa**
+2. Configura tus preferencias de estilo
+3. Marca ropa como favorita
 
-2. **Instalar la Aplicación**
-   - Abrir el explorador de archivos del dispositivo
-   - Navegar al APK transferido
-   - Tocar en el archivo para iniciar la instalación
-   - Confirmar la instalación
+### Modo Especial
+Para acceder a funcionalidades avanzadas:
+1. Di o escribe: *"262456"*
+2. Se desbloquearán opciones especiales
+3. Podrás generar ropa sin censura
 
-## 🔐 Configuración de Permisos
+## 🧠 Configuración de IA
 
-### Permisos Automáticos
-La aplicación solicitará automáticamente los permisos necesarios durante la primera ejecución.
+### Aprendizaje Automático
+1. **Habilitado por defecto**
+2. Ritsu aprenderá de tus interacciones
+3. Mejorará con el tiempo
 
-### Permisos Manuales (si es necesario)
+### Preferencias de Lenguaje
+1. Ve a **Configuración** > **IA**
+2. Selecciona:
+   - **Formal**: Usa "usted"
+   - **Informal**: Usa "tú"
+   - **Respuestas cortas**: Respuestas concisas
+   - **Respuestas detalladas**: Explicaciones completas
 
-#### 1. Permisos de Accesibilidad
-1. Ir a `Configuración` → `Accesibilidad`
-2. Buscar `Ritsu AI`
-3. Activar el servicio
-4. Confirmar la activación
-
-#### 2. Permisos de Superposición
-1. Ir a `Configuración` → `Aplicaciones` → `Ritsu AI`
-2. Tocar en `Permisos`
-3. Activar `Mostrar sobre otras aplicaciones`
-4. Confirmar el permiso
-
-#### 3. Permisos del Sistema
-1. En la aplicación, ir a `Configuración` → `Permisos`
-2. Solicitar permisos por categoría
-3. Confirmar cada permiso solicitado
-
-## 🎮 Primera Configuración
-
-### 1. Iniciar Ritsu AI
-- Abrir la aplicación
-- Completar el tutorial inicial
-- Configurar preferencias básicas
-
-### 2. Configurar Avatar
-- Personalizar apariencia del avatar
-- Generar ropa personalizada
-- Ajustar expresiones y animaciones
-
-### 3. Configurar IA
-- Ajustar preferencias de lenguaje
-- Configurar respuestas
-- Habilitar aprendizaje automático
+### Voz
+1. Ve a **Configuración** > **Voz**
+2. Ajusta:
+   - **Velocidad**: Rápida, normal, lenta
+   - **Tono**: Alto, medio, bajo
+   - **Idioma**: Español (recomendado)
 
 ## 🔧 Solución de Problemas
 
-### Errores Comunes
+### Problema: Avatar no aparece
+**Solución:**
+1. Verifica el permiso de superposición
+2. Reinicia la aplicación
+3. Verifica que el servicio esté activo
 
-#### Error de Compilación
-```bash
-# Limpiar proyecto
-./gradlew clean
+### Problema: No responde a comandos
+**Solución:**
+1. Verifica el permiso de accesibilidad
+2. Comprueba que el micrófono esté habilitado
+3. Reinicia el servicio de IA
 
-# Actualizar dependencias
-./gradlew --refresh-dependencies
+### Problema: Ropa no se genera
+**Solución:**
+1. Verifica permisos de almacenamiento
+2. Comprueba espacio disponible
+3. Reinicia el generador de ropa
 
-# Verificar versión de Gradle
-./gradlew --version
+### Problema: Voz no funciona
+**Solución:**
+1. Verifica configuración de TTS
+2. Comprueba volumen del dispositivo
+3. Reinstala datos de voz en español
+
+### Problema: Aplicación se cierra
+**Solución:**
+1. Verifica que tienes suficiente RAM
+2. Cierra otras aplicaciones
+3. Reinicia el dispositivo
+
+## 📱 Uso Básico
+
+### Comandos de Voz
+```
+"Ritsu, abre WhatsApp"
+"Ritsu, envía un mensaje a Juan"
+"Ritsu, toma una foto"
+"Ritsu, reproduce música"
+"Ritsu, cámbiate a un vestido elegante azul"
+"Ritsu, ponte modo especial"
 ```
 
-#### Error de Permisos
-- Verificar que todos los permisos estén concedidos
-- Reiniciar la aplicación después de conceder permisos
-- Verificar configuración de accesibilidad
+### Comandos de Texto
+- Escribe en el chat de Ritsu
+- Usa comandos naturales en español
+- Ritsu aprenderá de tus preferencias
 
-#### Error de Instalación
-- Verificar que `Instalar apps de fuentes desconocidas` esté habilitado
-- Verificar espacio disponible en el dispositivo
-- Reiniciar el dispositivo si es necesario
+### Control del Avatar
+- **Mover**: Toca y arrastra el avatar
+- **Redimensionar**: Pellizca para cambiar tamaño
+- **Expresiones**: Toca para cambiar expresión
+- **Ocultar**: Doble toque para ocultar/mostrar
+
+## 🔒 Seguridad y Privacidad
+
+### Datos Locales
+- **Sin envío de datos**: Todo se procesa localmente
+- **Sin conexión**: Funciona sin internet
+- **Datos personales**: Solo en tu dispositivo
+- **Control total**: Tú controlas todos los datos
+
+### Permisos
+- Solo los permisos necesarios para funcionar
+- Explicación clara de cada permiso
+- Posibilidad de revocar permisos
+- Modo limitado sin permisos completos
+
+## 📞 Soporte
+
+### Contacto
+- **Email**: soporte@ritsu-ai.com
+- **GitHub**: [Issues del repositorio]
+- **Documentación**: [Wiki del proyecto]
 
 ### Logs y Debug
 ```bash
 # Ver logs en tiempo real
 adb logcat | grep "RitsuAI"
 
-# Ver logs de la aplicación
-adb logcat -s "RitsuAI:*"
-
-# Verificar instalación
-adb shell pm list packages | grep ritsu
+# Limpiar datos de la aplicación
+adb shell pm clear com.ritsu.ai
 ```
 
-## 📱 Funcionalidades Principales
+## ✅ Verificación de Instalación
 
-### 🎭 Avatar Personalizable
-- **Cuerpo completo anime kawaii**
-- **Generación automática de ropa**
-- **Expresiones y animaciones**
-- **Modo especial desbloqueable**
+### Checklist de Verificación
+- [ ] APK instalado correctamente
+- [ ] Permiso de accesibilidad habilitado
+- [ ] Permiso de superposición habilitado
+- [ ] Avatar aparece en pantalla
+- [ ] Responde a comandos básicos
+- [ ] Voz funciona correctamente
+- [ ] Sistema de ropa funciona
+- [ ] Modo especial desbloqueado (opcional)
 
-### 🧠 Inteligencia Artificial
-- **Conversación natural en español**
-- **Control total del dispositivo**
-- **Aprendizaje automático**
-- **Respuestas contextuales**
-
-### 📱 Control del Sistema
-- **Gestión de aplicaciones**
-- **Mensajes y llamadas**
-- **Archivos y multimedia**
-- **Configuración del sistema**
-
-## 🎯 Modo Especial
-
-### Desbloquear Funcionalidades Avanzadas
-- **Palabra clave**: `ritsu_sin_censura_2024`
-- **Funcionalidades adicionales del avatar**
-- **Modo de ropa avanzado**
-- **Expresiones especiales**
-
-## 🔄 Actualizaciones
-
-### Actualización Automática
-- La aplicación verifica actualizaciones automáticamente
-- Notificaciones cuando hay nuevas versiones
-- Descarga e instalación automática
-
-### Actualización Manual
-1. Descargar nueva versión del código
-2. Compilar siguiendo los pasos anteriores
-3. Instalar sobre la versión existente
-
-## 📞 Soporte Técnico
-
-### Documentación
-- **README.md**: Información general del proyecto
-- **INSTALACION.md**: Esta guía de instalación
-- **Código fuente**: Comentarios detallados en el código
-
-### Contacto
-- **Issues**: Reportar bugs o solicitar funcionalidades
-- **Discussions**: Preguntas y soporte de la comunidad
-- **Wiki**: Documentación adicional y tutoriales
+### Pruebas Recomendadas
+1. **Comando básico**: "Ritsu, hola"
+2. **Generación de ropa**: "Ritsu, genera un vestido azul"
+3. **Control de app**: "Ritsu, abre configuración"
+4. **Modo especial**: "262456"
 
 ## 🎉 ¡Listo!
 
-Una vez completados todos los pasos, Ritsu AI estará completamente funcional en tu dispositivo Android. La aplicación te ayudará con todas las tareas del teléfono y aprenderá de tus preferencias para mejorar con el tiempo.
-
-### Próximos Pasos Recomendados
-1. **Explorar funcionalidades**: Probar todas las capacidades de Ritsu
-2. **Personalizar avatar**: Crear outfits únicos y personalizados
-3. **Configurar preferencias**: Ajustar la IA según tus necesidades
-4. **Compartir experiencia**: Ayudar a otros usuarios con la instalación
+Una vez completados todos los pasos, tendrás a Ritsu funcionando completamente en tu dispositivo. ¡Disfruta de tu nueva asistente personal!
 
 ---
 
-**Nota**: Esta aplicación requiere permisos extensivos para funcionar completamente. Todos los datos se procesan localmente en tu dispositivo para garantizar tu privacidad.
+**Nota**: Si encuentras algún problema durante la instalación, consulta la sección de solución de problemas o contacta al soporte técnico.
+
+*Ritsu está aquí para ayudarte con todo lo que necesites en tu dispositivo Android.* 🤖💕

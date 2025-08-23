@@ -3,10 +3,10 @@
     android:description="@string/accessibility_service_description"
     android:accessibilityEventTypes="typeAllMask"
     android:accessibilityFlags="flagDefault|flagIncludeNotImportantViews|flagRequestTouchExplorationMode|flagRequestEnhancedWebAccessibility|flagReportViewIds|flagRetrieveInteractiveWindows"
-    android:accessibilityFeedbackType="feedbackGeneric|feedbackHaptic|feedbackAudible|feedbackVisual|feedbackSpoken"
+    android:accessibilityFeedbackType="feedbackSpoken|feedbackHaptic|feedbackAudible|feedbackVisual|feedbackGeneric|feedbackAllMask"
     android:notificationTimeout="100"
     android:canRetrieveWindowContent="true"
     android:canPerformGestures="true"
-    android:canControlMedia="true"
-    android:canTakeScreenshot="true"
-    android:settingsActivity="com.ritsu.ai.ui.SettingsActivity" />
+    android:settingsActivity="com.ritsu.ai.ui.MainActivity"
+    android:canRequestTouchExplorationMode="true"
+    android:canRequestEnhancedWebAccessibility="true" />
