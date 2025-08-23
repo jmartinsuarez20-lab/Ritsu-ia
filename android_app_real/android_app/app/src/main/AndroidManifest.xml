@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ritsuai.assistant">
+    package="com.ritsu.ai">
 
     <!-- Permisos críticos para todas las funcionalidades -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -31,6 +31,42 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.DEVICE_ADMIN" />
+    <uses-permission android:name="android.permission.OVERLAY_PERMISSION" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    
+    <!-- Permisos para notificaciones -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    
+    <!-- Permisos para calendario -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    
+    <!-- Permisos para cámara -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    <!-- Permisos para ubicación -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- Permisos para Bluetooth -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    
+    <!-- Permisos para vibración -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- Permisos para configuración del sistema -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    
+    <!-- Permisos para aplicaciones de terceros -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    
+    <!-- Permisos para servicios en segundo plano -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     
     <!-- Acceso a archivos -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -100,6 +136,45 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_service_config" />
         </service>
+        
+        <!-- Servicio flotante para el avatar de Ritsu -->
+        <service
+            android:name=".services.RitsuFloatingService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="systemExempted" />
+        
+        <!-- Servicio de comunicación para WhatsApp y llamadas -->
+        <service
+            android:name=".services.RitsuCommunicationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+        
+        <!-- Receptor para notificaciones -->
+        <receiver
+            android:name=".receivers.RitsuNotificationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFICATION_LISTENER" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- Receptor para cambios de estado del sistema -->
+        <receiver
+            android:name=".receivers.RitsuSystemReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.BATTERY_LOW" />
+                <action android:name="android.intent.action.BATTERY_OKAY" />
+            </intent-filter>
+        </receiver>
         
     </application>
 

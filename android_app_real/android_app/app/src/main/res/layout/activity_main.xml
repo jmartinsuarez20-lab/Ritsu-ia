@@ -67,34 +67,73 @@
         android:id="@+id/buttonContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center"
         android:layout_margin="20dp"
         app:layout_constraintTop_toBottomOf="@id/btnActivateRitsu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnTestChat"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:text="Probar Chat"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:textColor="@color/primary_pink"
-            app:strokeColor="@color/primary_pink"
-            android:layout_marginEnd="10dp" />
+        <!-- Primera fila de botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSettings"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:text="Configurar"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:textColor="@color/primary_pink"
-            app:strokeColor="@color/primary_pink"
-            android:layout_marginStart="10dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTestChat"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Probar Chat"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:textColor="@color/primary_pink"
+                app:strokeColor="@color/primary_pink"
+                android:layout_marginEnd="5dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSettings"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Configurar"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:textColor="@color/primary_pink"
+                app:strokeColor="@color/primary_pink"
+                android:layout_marginStart="5dp" />
+
+        </LinearLayout>
+
+        <!-- Segunda fila de botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGenerateClothing"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Generar Ropa"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:textColor="@color/primary_pink"
+                app:strokeColor="@color/primary_pink"
+                android:layout_marginEnd="5dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSpecialMode"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Modo Especial"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:textColor="@color/primary_pink"
+                app:strokeColor="@color/primary_pink"
+                android:layout_marginStart="5dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
