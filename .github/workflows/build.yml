@@ -13,9 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Extract ZIP files
+    - name: Extract all ZIP files
       run: |
-        find . -name "*.zip" -exec unzip -o {} \;
+        echo "=== Extracting all ZIP files ==="
+        find . -name "*.zip" -type f -exec unzip -o {} \;
+        echo "=== Files after extraction ==="
+        find . -type f -name "*.gradle" -o -name "gradlew*" -o -name "AndroidManifest.xml"
+        echo "=== Directory structure ==="
+        find . -type d -name "app" -o -name "src"
         ls -la
         
     - name: Set up JDK 17
@@ -27,20 +32,38 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       
-    - name: Make gradlew executable
+    - name: Find and prepare Gradle
       run: |
-        find . -name "gradlew" -exec chmod +x {} \;
+        echo "=== Looking for gradlew files ==="
+        find . -name "gradlew" -type f -exec chmod +x {} \; -print
+        echo "=== Looking for build.gradle files ==="
+        find . -name "build.gradle" -type f -print
         
-    - name: Build Debug APK
+    - name: Build APK
       run: |
-        if [ -f "./gradlew" ]; then
-          ./gradlew assembleDebug
+        echo "=== Attempting to build APK ==="
+        # Try to find gradlew in any subdirectory
+        GRADLEW_PATH=$(find . -name "gradlew" -type f | head -1)
+        if [ -n "$GRADLEW_PATH" ]; then
+          GRADLE_DIR=$(dirname "$GRADLEW_PATH")
+          cd "$GRADLE_DIR"
+          echo "Building from directory: $(pwd)"
+          ./gradlew assembleDebug --stacktrace
         else
-          find . -name "gradlew" -execdir ./gradlew assembleDebug \;
+          echo "No gradlew found, looking for gradle wrapper in subdirectories"
+          find . -name "build.gradle" -type f -execdir pwd \;
         fi
         
     - name: Find and upload APK
       uses: actions/upload-artifact@v4
       with:
         name: RitsuAI-APK
-        path: "**/build/outputs/apk/debug/*.apk"
+        path: |
+          **/build/outputs/apk/debug/*.apk
+          **/app/build/outputs/apk/debug/*.apk
+        if-no-files-found: warn
+        
+    - name: List all APK files (debug)
+      run: |
+        echo "=== Searching for any APK files ==="
+        find . -name "*.apk" -type f -print
