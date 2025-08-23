@@ -1,0 +1,66 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
+    <!-- Base application theme -->
+    <style name="Theme.RitsuAI" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/primary_pink</item>
+        <item name="colorPrimaryVariant">@color/primary_pink_dark</item>
+        <item name="colorOnPrimary">@color/white_text</item>
+        
+        <item name="colorSecondary">@color/secondary_purple</item>
+        <item name="colorSecondaryVariant">@color/secondary_blue</item>
+        <item name="colorOnSecondary">@color/white_text</item>
+        
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/background_card</item>
+        <item name="colorOnSurface">@color/primary_text</item>
+        
+        <item name="android:statusBarColor">@color/primary_pink</item>
+        <item name="android:navigationBarColor">@color/background_light</item>
+        
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+    
+    <style name="Theme.RitsuAI.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <!-- Botones personalizados -->
+    <style name="RitsuButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary_pink</item>
+        <item name="android:textColor">@color/white_text</item>
+        <item name="cornerRadius">25dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="RitsuButtonOutlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/primary_pink</item>
+        <item name="android:textColor">@color/primary_pink</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+    <!-- Texto personalizado -->
+    <style name="RitsuTitleText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="RitsuBodyText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+    
+    <!-- Cards personalizadas -->
+    <style name="RitsuCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">15dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/background_card</item>
+    </style>
+    
+</resources>
