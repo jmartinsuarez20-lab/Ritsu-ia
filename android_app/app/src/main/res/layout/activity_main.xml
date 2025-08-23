@@ -63,40 +63,18 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botones secundarios -->
-    <LinearLayout
-        android:id="@+id/buttonContainer"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTestChat"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_height="48dp"
+        android:text="Probar Chat"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:textColor="@color/primary_pink"
+        app:strokeColor="@color/primary_pink"
         android:layout_margin="20dp"
         app:layout_constraintTop_toBottomOf="@id/btnActivateRitsu"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnTestChat"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:text="Probar Chat"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:textColor="@color/primary_pink"
-            app:strokeColor="@color/primary_pink"
-            android:layout_marginEnd="10dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSettings"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:text="Configurar"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:textColor="@color/primary_pink"
-            app:strokeColor="@color/primary_pink"
-            android:layout_marginStart="10dp" />
-
-    </LinearLayout>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Área de chat -->
     <androidx.cardview.widget.CardView
@@ -106,7 +84,7 @@
         android:layout_margin="20dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonContainer"
+        app:layout_constraintTop_toBottomOf="@id/btnTestChat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
