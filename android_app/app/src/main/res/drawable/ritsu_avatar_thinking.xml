@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    
+    <!-- Fondo circular -->
+    <path
+        android:fillColor="#FFE4E1"
+        android:pathData="M100,100m-90,0a90,90 0,1 1,180 0a90,90 0,1 1,-180 0" />
+    
+    <!-- Cabeza -->
+    <path
+        android:fillColor="#FFDBCC"
+        android:pathData="M100,80m-40,0a40,40 0,1 1,80 0a40,40 0,1 1,-80 0" />
+    
+    <!-- Ojos mirando hacia arriba -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M85,75m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M115,75m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0" />
+    
+    <!-- Pupilas hacia arriba -->
+    <path
+        android:fillColor="#6B4E3D"
+        android:pathData="M85,70m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    <path
+        android:fillColor="#6B4E3D"
+        android:pathData="M115,70m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    
+    <!-- Boca pensativa -->
+    <path
+        android:strokeColor="#FF9999"
+        android:strokeWidth="2"
+        android:pathData="M95,92 L105,92" />
+    
+    <!-- Nube de pensamiento -->
+    <path
+        android:fillColor="#E6F3FF"
+        android:pathData="M140,50m-15,0a15,15 0,1 1,30 0a15,15 0,1 1,-30 0" />
+    <path
+        android:fillColor="#CCE6FF"
+        android:pathData="M155,35m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0" />
+    <path
+        android:fillColor="#B3D9FF"
+        android:pathData="M165,25m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    
+    <!-- Cabello -->
+    <path
+        android:fillColor="#8B4513"
+        android:pathData="M100,40 Q70,30 60,60 Q70,50 80,55 Q90,45 100,50 Q110,45 120,55 Q130,50 140,60 Q130,30 100,40 Z" />
+    
+    <!-- Cuerpo -->
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M100,120m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0" />
+    
+</vector>

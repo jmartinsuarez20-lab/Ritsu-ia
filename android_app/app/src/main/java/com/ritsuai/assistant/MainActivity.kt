@@ -16,21 +16,13 @@ import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.ritsuai.assistant.databinding.ActivityMainBinding
-import com.ritsuai.assistant.services.RitsuAIService
-import com.ritsuai.assistant.services.KawaiiAvatarService
-import com.ritsuai.assistant.services.AppControlService
 import com.ritsuai.assistant.ui.RitsuAvatarView
-import com.ritsuai.assistant.core.*
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
     
     private lateinit var binding: ActivityMainBinding
     private lateinit var avatarView: RitsuAvatarView
-    
-    // Núcleo de IA de Ritsu
-    private lateinit var ritsuAICore: RitsuAICore
-    private lateinit var voiceSystem: VoiceSystem
     
     // Scope para operaciones asíncronas
     private val mainScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
@@ -62,32 +54,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
-        // Inicializar sistemas de IA
-        initializeRitsuSystems()
-        
         setupUI()
         requestPermissions()
-    }
-    
-    private fun initializeRitsuSystems() {
-        // Inicializar núcleo de IA
-        ritsuAICore = RitsuAICore(this)
-        
-        // Inicializar sistema de voz
-        voiceSystem = VoiceSystem(this)
-        voiceSystem.setVoiceCallbacks(
-            onStarted = { 
-                runOnUiThread { avatarView.setExpression("talking") }
-            },
-            onCompleted = { 
-                runOnUiThread { avatarView.setExpression("neutral") }
-            },
-            onError = { error ->
-                runOnUiThread { 
-                    Toast.makeText(this, "Error de voz: $error", Toast.LENGTH_SHORT).show()
-                }
-            }
-        )
     }
     
     private fun setupUI() {
@@ -112,16 +80,6 @@ class MainActivity : AppCompatActivity() {
         // Configurar chat de prueba con IA real
         binding.btnTestChat.setOnClickListener {
             testChatWithRitsu()
-        }
-        
-        // Botón para probar cambio de outfit
-        binding.btnTestOutfit.setOnClickListener {
-            testOutfitChange()
-        }
-        
-        // Botón para activar avatar flotante
-        binding.btnFloatingAvatar.setOnClickListener {
-            activateFloatingAvatar()
         }
     }
     

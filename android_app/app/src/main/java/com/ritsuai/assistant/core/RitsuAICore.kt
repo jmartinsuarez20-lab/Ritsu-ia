@@ -2,8 +2,6 @@ package com.ritsuai.assistant.core
 
 import android.content.Context
 import kotlinx.coroutines.*
-import org.json.JSONObject
-import java.io.File
 import java.util.*
 import kotlin.random.Random
 
@@ -19,7 +17,6 @@ class RitsuAICore(private val context: Context) {
     private lateinit var personalityEngine: PersonalityEngine
     private lateinit var memoryManager: MemoryManager
     private lateinit var learningSystem: LearningSystem
-    private lateinit var emotionalSystem: EmotionalSystem
     private lateinit var conversationEngine: ConversationEngine
     
     // Estado actual de Ritsu
@@ -51,7 +48,6 @@ class RitsuAICore(private val context: Context) {
         personalityEngine = PersonalityEngine(ritsuPersonality)
         memoryManager = MemoryManager(context)
         learningSystem = LearningSystem(context)
-        emotionalSystem = EmotionalSystem()
         conversationEngine = ConversationEngine(personalityEngine, memoryManager)
     }
     
