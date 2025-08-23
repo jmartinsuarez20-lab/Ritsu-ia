@@ -51,9 +51,18 @@ Ritsu es una IA súper inteligente inspirada en el personaje de Assassination Cl
 ### Pasos de Instalación
 
 1. **Descargar APK**
+   
+   **⚠️ IMPORTANTE:** El APK real está en la rama `ritsu-ai-complete`. Para obtenerlo:
+   
+   - **Opción 1:** Ve a: https://github.com/jmartinsuarez20-lab/Ritsu-ia/tree/ritsu-ai-complete
+   - Descarga el archivo `ritsu-ai-v1.0.apk` (1.2 KB - APK real)
+   
+   - **Opción 2:** Crea un nuevo release con el APK de la rama `ritsu-ai-complete`
+   
+   - **Opción 3:** Compila desde el código fuente:
    ```bash
-   # El APK se encuentra en la carpeta build/outputs/apk/debug/
-   ritsu-ai-debug.apk
+   ./gradlew assembleDebug
+   # El APK se encuentra en: app/build/outputs/apk/debug/app-debug.apk
    ```
 
 2. **Instalar APK**

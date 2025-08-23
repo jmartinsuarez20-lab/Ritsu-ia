@@ -1,0 +1,3 @@
+ui_print("Ritsu AI - Instalando...");
+ui_print("Configurando Ritsu...");
+ui_print("Instalación completada");

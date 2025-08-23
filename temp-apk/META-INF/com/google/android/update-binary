@@ -1,0 +1,5 @@
+#!/sbin/sh
+echo "Ritsu AI Installer"
+echo "Instalando Ritsu AI..."
+echo "Instalación completada"
+exit 0
