@@ -52,6 +52,22 @@ class AIManager(private val context: Context) {
             "Lo siento, tuve un pequeño problema. ¿Podrías intentarlo de nuevo?",
             "Ocurrió un error inesperado. Intentemos de nuevo.",
             "Algo salió mal. ¿Podemos intentarlo otra vez?"
+        ),
+        "llamada_entrante" to listOf(
+            "¡Hola! Soy el asistente de ${preferenceManager.getUserName()}. ¿En qué puedo ayudarle?",
+            "Buenos días, soy el asistente personal. ¿Cómo puedo asistirle?",
+            "Hola, soy Ritsu, el asistente de ${preferenceManager.getUserName()}. ¿En qué puedo ayudarle?"
+        ),
+        "llamada_contacto" to listOf(
+            "¡Hola! Soy Ritsu, el asistente de ${preferenceManager.getUserName()}. ¿En qué puedo ayudarte?",
+            "¡Hola! Estoy aquí para asistirte. ¿Qué necesitas?",
+            "¡Hola! Soy el asistente personal. ¿Cómo puedo ayudarte?"
+        ),
+        "llamada_followup" to listOf(
+            "Entiendo perfectamente. ¿Hay algo más en lo que pueda ayudarte?",
+            "Perfecto. ¿Necesitas que tome alguna nota o recuerde algo importante?",
+            "Excelente. ¿Te parece bien si continuamos con eso?",
+            "Muy bien. ¿Hay algún detalle adicional que deba considerar?"
         )
     )
     
@@ -321,6 +337,91 @@ class AIManager(private val context: Context) {
     fun cleanup() {
         textToSpeech?.shutdown()
         scope.cancel()
+    }
+    
+    // Métodos específicos para manejo de llamadas
+    fun generateCallResponse(callerName: String, callerNumber: String, isKnownContact: Boolean): String {
+        val timeOfDay = getTimeOfDay()
+        val userName = preferenceManager.getUserName()
+        
+        return when {
+            isKnownContact -> {
+                when (timeOfDay) {
+                    "morning" -> "¡Hola $callerName! Buenos días, soy Ritsu, el asistente de $userName. ¿Cómo estás?"
+                    "afternoon" -> "¡Hola $callerName! Buenas tardes, soy Ritsu, el asistente de $userName. ¿Qué tal va tu día?"
+                    "evening" -> "¡Hola $callerName! Buenas noches, soy Ritsu, el asistente de $userName. ¿Cómo va todo?"
+                    else -> "¡Hola $callerName! Soy Ritsu, el asistente de $userName. ¿En qué puedo ayudarte?"
+                }
+            }
+            else -> {
+                when (timeOfDay) {
+                    "morning" -> "Buenos días, soy Ritsu, el asistente de $userName. ¿En qué puedo ayudarle?"
+                    "afternoon" -> "Buenas tardes, soy Ritsu, el asistente de $userName. ¿En qué puedo ayudarle?"
+                    "evening" -> "Buenas noches, soy Ritsu, el asistente de $userName. ¿En qué puedo ayudarle?"
+                    else -> "Hola, soy Ritsu, el asistente de $userName. ¿En qué puedo ayudarle?"
+                }
+            }
+        }
+    }
+    
+    fun generateFollowUpResponse(context: String? = null): String {
+        val responses = listOf(
+            "Entiendo perfectamente. ¿Hay algo más en lo que pueda ayudarte?",
+            "Perfecto. ¿Necesitas que tome alguna nota o recuerde algo importante?",
+            "Excelente. ¿Te parece bien si continuamos con eso?",
+            "Muy bien. ¿Hay algún detalle adicional que deba considerar?",
+            "Comprendo. ¿Hay alguna otra cosa que necesites?",
+            "Perfecto. ¿Quieres que proceda con eso?"
+        )
+        
+        return responses.random()
+    }
+    
+    private fun getTimeOfDay(): String {
+        val hour = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
+        return when {
+            hour < 12 -> "morning"
+            hour < 18 -> "afternoon"
+            else -> "evening"
+        }
+    }
+    
+    fun speakWithClarity(text: String) {
+        if (isTTSInitialized && preferenceManager.isVoiceEnabled()) {
+            // Configurar para mejor claridad en llamadas
+            if (preferenceManager.isVoiceClarityModeEnabled()) {
+                textToSpeech?.setSpeechRate(0.9f) // Hablar más lento para mayor claridad
+                textToSpeech?.setPitch(1.1f) // Pitch ligeramente más alto para mejor audibilidad
+            }
+            
+            textToSpeech?.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
+            
+            // Restaurar configuración normal después de un delay
+            if (preferenceManager.isVoiceClarityModeEnabled()) {
+                scope.launch {
+                    delay(5000) // Esperar 5 segundos
+                    textToSpeech?.setSpeechRate(preferenceManager.getVoiceSpeed())
+                    textToSpeech?.setPitch(preferenceManager.getVoicePitch())
+                }
+            }
+        }
+    }
+    
+    fun speakDuringCall(text: String) {
+        if (isTTSInitialized && preferenceManager.isVoiceEnabled()) {
+            // Configuración específica para llamadas
+            textToSpeech?.setSpeechRate(0.85f) // Hablar más lento durante llamadas
+            textToSpeech?.setPitch(1.05f) // Pitch ligeramente más alto
+            
+            textToSpeech?.speak(text, TextToSpeech.QUEUE_FLUSH, null, null)
+            
+            // Restaurar configuración después de la llamada
+            scope.launch {
+                delay(3000)
+                textToSpeech?.setSpeechRate(preferenceManager.getVoiceSpeed())
+                textToSpeech?.setPitch(preferenceManager.getVoicePitch())
+            }
+        }
     }
     
     data class AIResponse(

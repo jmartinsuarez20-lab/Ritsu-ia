@@ -50,6 +50,15 @@ class PreferenceManager(context: Context) {
         // Claves de modo especial
         private const val KEY_SPECIAL_MODE_ENABLED = "special_mode_enabled"
         private const val KEY_SPECIAL_MODE_LAST_USED = "special_mode_last_used"
+        
+        // Claves de manejo de llamadas
+        private const val KEY_AUTO_ANSWER_ENABLED = "auto_answer_enabled"
+        private const val KEY_CONVERSATION_MODE_ENABLED = "conversation_mode_enabled"
+        private const val KEY_USER_NAME = "user_name"
+        private const val KEY_DO_NOT_DISTURB_MODE = "do_not_disturb_mode"
+        private const val KEY_CALL_RESPONSE_DELAY = "call_response_delay"
+        private const val KEY_VOICE_CLARITY_MODE = "voice_clarity_mode"
+        private const val KEY_OPPO_OPTIMIZATION = "oppo_optimization"
     }
     
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
@@ -207,6 +216,28 @@ class PreferenceManager(context: Context) {
     
     fun getSpecialModeLastUsed(): Long = sharedPreferences.getLong(KEY_SPECIAL_MODE_LAST_USED, 0L)
     fun setSpecialModeLastUsed(timestamp: Long) = sharedPreferences.edit().putLong(KEY_SPECIAL_MODE_LAST_USED, timestamp).apply()
+    
+    // Configuración de manejo de llamadas
+    fun getAutoAnswerEnabled(): Boolean = sharedPreferences.getBoolean(KEY_AUTO_ANSWER_ENABLED, false)
+    fun setAutoAnswerEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_AUTO_ANSWER_ENABLED, enabled).apply()
+    
+    fun getEnableConversationMode(): Boolean = sharedPreferences.getBoolean(KEY_CONVERSATION_MODE_ENABLED, true)
+    fun setEnableConversationMode(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_CONVERSATION_MODE_ENABLED, enabled).apply()
+    
+    fun getUserName(): String = sharedPreferences.getString(KEY_USER_NAME, "Usuario") ?: "Usuario"
+    fun setUserName(name: String) = sharedPreferences.edit().putString(KEY_USER_NAME, name).apply()
+    
+    fun isInDoNotDisturbMode(): Boolean = sharedPreferences.getBoolean(KEY_DO_NOT_DISTURB_MODE, false)
+    fun setDoNotDisturbMode(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_DO_NOT_DISTURB_MODE, enabled).apply()
+    
+    fun getCallResponseDelay(): Int = sharedPreferences.getInt(KEY_CALL_RESPONSE_DELAY, 2000)
+    fun setCallResponseDelay(delay: Int) = sharedPreferences.edit().putInt(KEY_CALL_RESPONSE_DELAY, delay).apply()
+    
+    fun isVoiceClarityModeEnabled(): Boolean = sharedPreferences.getBoolean(KEY_VOICE_CLARITY_MODE, true)
+    fun setVoiceClarityModeEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_VOICE_CLARITY_MODE, enabled).apply()
+    
+    fun isOPPOOptimizationEnabled(): Boolean = sharedPreferences.getBoolean(KEY_OPPO_OPTIMIZATION, true)
+    fun setOPPOOptimizationEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_OPPO_OPTIMIZATION, enabled).apply()
     
     // Métodos de utilidad
     fun getBoolean(key: String, defaultValue: Boolean = false): Boolean = sharedPreferences.getBoolean(key, defaultValue)
