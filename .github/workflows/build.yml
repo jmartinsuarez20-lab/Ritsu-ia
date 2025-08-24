@@ -2,9 +2,9 @@ name: Build Ritsu AI for ColorOS 15
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, cursor/mejorar-apk-para-respuesta-aut-noma-en-oppo-reno-13-5g-cfd9 ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, cursor/mejorar-apk-para-respuesta-aut-noma-en-oppo-reno-13-5g-cfd9 ]
   release:
     types: [ published ]
 

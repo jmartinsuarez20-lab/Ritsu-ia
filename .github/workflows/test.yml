@@ -2,9 +2,9 @@ name: Test Ritsu AI Build
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches: [ main, master, develop, cursor/mejorar-apk-para-respuesta-aut-noma-en-oppo-reno-13-5g-cfd9 ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, develop, cursor/mejorar-apk-para-respuesta-aut-noma-en-oppo-reno-13-5g-cfd9 ]
 
 jobs:
   test:
