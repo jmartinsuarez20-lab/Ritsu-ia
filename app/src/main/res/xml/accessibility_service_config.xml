@@ -6,7 +6,10 @@
     android:accessibilityFeedbackType="feedbackSpoken|feedbackHaptic|feedbackAudible|feedbackVisual|feedbackGeneric|feedbackAllMask"
     android:notificationTimeout="100"
     android:canRetrieveWindowContent="true"
-    android:canPerformGestures="true"
-    android:settingsActivity="com.ritsu.ai.ui.MainActivity"
     android:canRequestTouchExplorationMode="true"
-    android:canRequestEnhancedWebAccessibility="true" />
+    android:canRequestEnhancedWebAccessibility="true"
+    android:canRequestFilterKeyEvents="true"
+    android:canRequestAccessibilityButton="true"
+    android:canRequestFingerprintGestures="true"
+    android:canPerformGestures="true"
+    android:settingsActivity="com.ritsu.ai.ui.MainActivity" />

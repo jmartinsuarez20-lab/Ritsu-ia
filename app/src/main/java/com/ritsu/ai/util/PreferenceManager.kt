@@ -59,6 +59,15 @@ class PreferenceManager(context: Context) {
         private const val KEY_CALL_RESPONSE_DELAY = "call_response_delay"
         private const val KEY_VOICE_CLARITY_MODE = "voice_clarity_mode"
         private const val KEY_OPPO_OPTIMIZATION = "oppo_optimization"
+        
+        // Claves específicas de ColorOS 15
+        private const val KEY_COLOROS_OPTIMIZATION = "coloros_optimization"
+        private const val KEY_COLOROS_AUTO_START = "coloros_auto_start"
+        private const val KEY_COLOROS_BATTERY_OPTIMIZATION = "coloros_battery_optimization"
+        private const val KEY_COLOROS_NOTIFICATION_ACCESS = "coloros_notification_access"
+        private const val KEY_COLOROS_ACCESSIBILITY = "coloros_accessibility"
+        private const val KEY_COLOROS_OVERLAY = "coloros_overlay"
+        private const val KEY_COLOROS_USAGE_STATS = "coloros_usage_stats"
     }
     
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
@@ -238,6 +247,28 @@ class PreferenceManager(context: Context) {
     
     fun isOPPOOptimizationEnabled(): Boolean = sharedPreferences.getBoolean(KEY_OPPO_OPTIMIZATION, true)
     fun setOPPOOptimizationEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_OPPO_OPTIMIZATION, enabled).apply()
+    
+    // Configuración específica de ColorOS 15
+    fun isColorOSOptimizationEnabled(): Boolean = sharedPreferences.getBoolean(KEY_COLOROS_OPTIMIZATION, true)
+    fun setColorOSOptimizationEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_COLOROS_OPTIMIZATION, enabled).apply()
+    
+    fun isColorOSAutoStartEnabled(): Boolean = sharedPreferences.getBoolean(KEY_COLOROS_AUTO_START, false)
+    fun setColorOSAutoStartEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_COLOROS_AUTO_START, enabled).apply()
+    
+    fun isColorOSBatteryOptimizationDisabled(): Boolean = sharedPreferences.getBoolean(KEY_COLOROS_BATTERY_OPTIMIZATION, false)
+    fun setColorOSBatteryOptimizationDisabled(disabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_COLOROS_BATTERY_OPTIMIZATION, disabled).apply()
+    
+    fun isColorOSNotificationAccessEnabled(): Boolean = sharedPreferences.getBoolean(KEY_COLOROS_NOTIFICATION_ACCESS, false)
+    fun setColorOSNotificationAccessEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_COLOROS_NOTIFICATION_ACCESS, enabled).apply()
+    
+    fun isColorOSAccessibilityEnabled(): Boolean = sharedPreferences.getBoolean(KEY_COLOROS_ACCESSIBILITY, false)
+    fun setColorOSAccessibilityEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_COLOROS_ACCESSIBILITY, enabled).apply()
+    
+    fun isColorOSOverlayEnabled(): Boolean = sharedPreferences.getBoolean(KEY_COLOROS_OVERLAY, false)
+    fun setColorOSOverlayEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_COLOROS_OVERLAY, enabled).apply()
+    
+    fun isColorOSUsageStatsEnabled(): Boolean = sharedPreferences.getBoolean(KEY_COLOROS_USAGE_STATS, false)
+    fun setColorOSUsageStatsEnabled(enabled: Boolean) = sharedPreferences.edit().putBoolean(KEY_COLOROS_USAGE_STATS, enabled).apply()
     
     // Métodos de utilidad
     fun getBoolean(key: String, defaultValue: Boolean = false): Boolean = sharedPreferences.getBoolean(key, defaultValue)

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Incluir todos los archivos de la aplicación -->
+    <include domain="sharedpref" path="."/>
+    <include domain="database" path="."/>
+    <include domain="file" path="."/>
+    <include domain="root" path="."/>
+    
+    <!-- Excluir archivos temporales y de caché -->
+    <exclude domain="file" path="cache"/>
+    <exclude domain="file" path="tmp"/>
+    <exclude domain="file" path="temp"/>
+    <exclude domain="file" path="*.tmp"/>
+    <exclude domain="file" path="*.log"/>
+    
+    <!-- Configuración específica para ColorOS 15 -->
+    <include domain="sharedpref" path="ritsu_preferences.xml"/>
+    <include domain="database" path="ritsu_database"/>
+    <include domain="file" path="ritsu_data"/>
+</full-backup-content>
