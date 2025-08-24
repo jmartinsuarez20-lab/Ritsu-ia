@@ -14,6 +14,8 @@ import com.ritsu.ai.util.AvatarManager
 import com.ritsu.ai.util.AIManager
 import com.ritsu.ai.util.ClothingGenerator
 import com.ritsu.ai.util.LearningManager
+import com.ritsu.ai.util.OPPOOptimizer
+import com.ritsu.ai.util.ColorOSOptimizer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -60,6 +62,8 @@ class RitsuApplication : Application() {
     lateinit var aiManager: AIManager
     lateinit var clothingGenerator: ClothingGenerator
     lateinit var learningManager: LearningManager
+    lateinit var oppoOptimizer: OPPOOptimizer
+    lateinit var colorOSOptimizer: ColorOSOptimizer
     
     // Base de datos
     lateinit var database: RitsuDatabase
@@ -93,6 +97,14 @@ class RitsuApplication : Application() {
         aiManager = AIManager(this)
         clothingGenerator = ClothingGenerator(this)
         learningManager = LearningManager(this)
+        oppoOptimizer = OPPOOptimizer(this)
+        colorOSOptimizer = ColorOSOptimizer(this)
+        
+        // Aplicar optimizaciones específicas para OPPO Reno 13 5G
+        oppoOptimizer.optimizeForOPPO()
+        
+        // Aplicar optimizaciones específicas para ColorOS 15
+        colorOSOptimizer.optimizeForColorOS15()
     }
     
     private fun initializeDatabase() {

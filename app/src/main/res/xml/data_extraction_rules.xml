@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Incluir datos importantes para backup en la nube -->
+        <include domain="sharedpref" path="."/>
+        <include domain="database" path="."/>
+        <include domain="file" path="ritsu_data"/>
+        
+        <!-- Excluir datos sensibles y temporales -->
+        <exclude domain="file" path="cache"/>
+        <exclude domain="file" path="tmp"/>
+        <exclude domain="file" path="*.log"/>
+    </cloud-backup>
+    
+    <device-transfer>
+        <!-- Incluir todos los datos para transferencia de dispositivo -->
+        <include domain="sharedpref" path="."/>
+        <include domain="database" path="."/>
+        <include domain="file" path="."/>
+        <include domain="root" path="."/>
+        
+        <!-- Excluir archivos temporales -->
+        <exclude domain="file" path="cache"/>
+        <exclude domain="file" path="tmp"/>
+        <exclude domain="file" path="temp"/>
+    </device-transfer>
+</data-extraction-rules>
