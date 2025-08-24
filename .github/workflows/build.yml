@@ -1,9 +1,12 @@
-name: Build Ritsu AI APK
+name: Build Ritsu AI for ColorOS 15
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [ main, master, cursor/mejorar-apk-para-respuesta-aut-noma-en-oppo-reno-13-5g-cfd9 ]
+  pull_request:
+    branches: [ main, master, cursor/mejorar-apk-para-respuesta-aut-noma-en-oppo-reno-13-5g-cfd9 ]
+  release:
+    types: [ published ]
 
 jobs:
   build:
@@ -13,57 +16,134 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Extract all ZIP files
-      run: |
-        echo "=== Extracting all ZIP files ==="
-        find . -name "*.zip" -type f -exec unzip -o {} \;
-        echo "=== Files after extraction ==="
-        find . -type f -name "*.gradle" -o -name "gradlew*" -o -name "AndroidManifest.xml"
-        echo "=== Directory structure ==="
-        find . -type d -name "app" -o -name "src"
-        ls -la
-        
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
+        cache: gradle
         
-    - name: Setup Android SDK
+    - name: Set up Android SDK
       uses: android-actions/setup-android@v3
+      with:
+        sdk-platform: '34'
+        sdk-build-tools: '34.0.0'
+        ndk-version: '25.2.9519653'
       
-    - name: Find and prepare Gradle
-      run: |
-        echo "=== Looking for gradlew files ==="
-        find . -name "gradlew" -type f -exec chmod +x {} \; -print
-        echo "=== Looking for build.gradle files ==="
-        find . -name "build.gradle" -type f -print
-        
-    - name: Build APK
-      run: |
-        echo "=== Attempting to build APK ==="
-        # Try to find gradlew in any subdirectory
-        GRADLEW_PATH=$(find . -name "gradlew" -type f | head -1)
-        if [ -n "$GRADLEW_PATH" ]; then
-          GRADLE_DIR=$(dirname "$GRADLEW_PATH")
-          cd "$GRADLE_DIR"
-          echo "Building from directory: $(pwd)"
-          ./gradlew assembleDebug --stacktrace
-        else
-          echo "No gradlew found, looking for gradle wrapper in subdirectories"
-          find . -name "build.gradle" -type f -execdir pwd \;
-        fi
-        
-    - name: Find and upload APK
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      
+    - name: Cache Gradle packages
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+          
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
+      
+    - name: Build Release APK
+      run: ./gradlew assembleRelease
+      
+    - name: Upload Debug APK
       uses: actions/upload-artifact@v4
       with:
-        name: RitsuAI-APK
-        path: |
-          **/build/outputs/apk/debug/*.apk
-          **/app/build/outputs/apk/debug/*.apk
-        if-no-files-found: warn
+        name: ritsu-ai-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
         
-    - name: List all APK files (debug)
-      run: |
-        echo "=== Searching for any APK files ==="
-        find . -name "*.apk" -type f -print
+    - name: Upload Release APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: ritsu-ai-release
+        path: app/build/outputs/apk/release/app-release.apk
+        
+    - name: Create Release
+      if: github.event_name == 'release'
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Ritsu AI v${{ github.ref_name }} for ColorOS 15
+        body: |
+          ## 🎉 Ritsu AI v${{ github.ref_name }} - Optimizado para ColorOS 15
+          
+          ### 📱 Compatibilidad
+          - ✅ OPPO Reno 13 5G
+          - ✅ ColorOS 15
+          - ✅ Respuesta automática a llamadas
+          - ✅ Calidad de audio optimizada
+          
+          ### 🚀 Nuevas Funcionalidades
+          - Respuesta automática a llamadas entrantes
+          - Optimización específica para OPPO Reno 13 5G
+          - Configuración automática para ColorOS 15
+          - Calidad de audio mejorada
+          - Modo conversación inteligente
+          
+          ### 📋 Instalación
+          1. Descarga el APK de release
+          2. Ejecuta: `./install_coloros15.sh`
+          3. Sigue la guía en `INSTALACION_COLOROS15.md`
+          
+          ### 🔧 Configuración Automática
+          - Permisos configurados automáticamente
+          - Optimización de batería deshabilitada
+          - Auto-inicio habilitado
+          - Ejecución en segundo plano garantizada
+          
+          ### 📞 Funcionalidades de Llamadas
+          - Detección automática de llamadas entrantes
+          - Respuesta automática sin intervención
+          - Respuestas contextuales inteligentes
+          - Modo conversación continua
+          - Calidad de audio optimizada para OPPO
+          
+          ### 🎵 Optimizaciones de Audio
+          - Configuración específica para OPPO Reno 13 5G
+          - Reducción de ruido automática
+          - Cancelación de eco
+          - Modo claridad de voz
+          - Volúmenes optimizados para llamadas
+          
+          ### 🔒 Compatibilidad ColorOS 15
+          - Manejo de restricciones específicas
+          - Configuración automática de permisos
+          - Optimización de batería
+          - Auto-inicio configurado
+          - Ejecución en segundo plano
+          
+          ### 📊 Archivos Incluidos
+          - `app-release.apk` - APK optimizado para ColorOS 15
+          - `install_coloros15.sh` - Script de instalación automática
+          - `INSTALACION_COLOROS15.md` - Guía completa de instalación
+          - `MEJORAS_COLOROS15.md` - Resumen de optimizaciones
+          
+          ### 🚨 Solución de Problemas
+          Si encuentras problemas durante la instalación:
+          1. Verifica que sigues todos los pasos en `INSTALACION_COLOROS15.md`
+          2. Reinicia el dispositivo después de la instalación
+          3. Verifica que todos los permisos estén habilitados
+          4. Contacta soporte técnico si el problema persiste
+          
+          ### ✅ Lista de Verificación
+          - [ ] Depuración USB habilitada
+          - [ ] Fuentes desconocidas habilitadas
+          - [ ] Aplicación instalada correctamente
+          - [ ] Servicio de accesibilidad habilitado
+          - [ ] Permisos de notificaciones otorgados
+          - [ ] Permisos de llamadas otorgados
+          - [ ] Auto-inicio habilitado
+          - [ ] Optimización de batería deshabilitada
+          - [ ] Ejecución en segundo plano habilitada
+          - [ ] Mostrar sobre otras aplicaciones habilitado
+          - [ ] Respuesta automática configurada
+          - [ ] Audio optimizado para OPPO
+          
+          ¡Tu Ritsu AI está listo para responder automáticamente a tus llamadas! 🎉
+        draft: false
+        prerelease: false
