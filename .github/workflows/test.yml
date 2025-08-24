@@ -1,0 +1,117 @@
+name: Test Ritsu AI Build
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+        
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v3
+      
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      
+    - name: Cache Gradle packages
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+          
+    - name: Validate Gradle Wrapper
+      run: |
+        echo "Checking Gradle wrapper..."
+        ./gradlew --version
+        
+    - name: Check Android Manifest
+      run: |
+        echo "Validating AndroidManifest.xml..."
+        if [ -f "app/src/main/AndroidManifest.xml" ]; then
+          echo "✅ AndroidManifest.xml found"
+          grep -q "com.ritsu.ai" app/src/main/AndroidManifest.xml && echo "✅ Package name correct"
+          grep -q "RitsuCallHandlerService" app/src/main/AndroidManifest.xml && echo "✅ Call handler service registered"
+          grep -q "ANSWER_PHONE_CALLS" app/src/main/AndroidManifest.xml && echo "✅ Call permissions added"
+        else
+          echo "❌ AndroidManifest.xml not found"
+          exit 1
+        fi
+        
+    - name: Check ColorOS Optimizations
+      run: |
+        echo "Checking ColorOS optimizations..."
+        if [ -f "app/src/main/java/com/ritsu/ai/util/ColorOSOptimizer.kt" ]; then
+          echo "✅ ColorOSOptimizer.kt found"
+        else
+          echo "❌ ColorOSOptimizer.kt not found"
+          exit 1
+        fi
+        
+        if [ -f "app/src/main/java/com/ritsu/ai/util/OPPOOptimizer.kt" ]; then
+          echo "✅ OPPOOptimizer.kt found"
+        else
+          echo "❌ OPPOOptimizer.kt not found"
+          exit 1
+        fi
+        
+        if [ -f "app/src/main/java/com/ritsu/ai/service/RitsuCallHandlerService.kt" ]; then
+          echo "✅ RitsuCallHandlerService.kt found"
+        else
+          echo "❌ RitsuCallHandlerService.kt not found"
+          exit 1
+        fi
+        
+    - name: Check Installation Files
+      run: |
+        echo "Checking installation files..."
+        if [ -f "install_coloros15.sh" ]; then
+          echo "✅ install_coloros15.sh found"
+        else
+          echo "❌ install_coloros15.sh not found"
+          exit 1
+        fi
+        
+        if [ -f "INSTALACION_COLOROS15.md" ]; then
+          echo "✅ INSTALACION_COLOROS15.md found"
+        else
+          echo "❌ INSTALACION_COLOROS15.md not found"
+          exit 1
+        fi
+        
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug --stacktrace
+      
+    - name: Verify APK Creation
+      run: |
+        echo "Verifying APK creation..."
+        if [ -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
+          echo "✅ Debug APK created successfully"
+          ls -la app/build/outputs/apk/debug/
+        else
+          echo "❌ Debug APK not found"
+          exit 1
+        fi
+        
+    - name: Upload Test APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: ritsu-ai-test
+        path: app/build/outputs/apk/debug/app-debug.apk
