@@ -87,18 +87,7 @@
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     
     <!-- Permisos específicos para ColorOS 15 -->
-    <uses-permission android:name="android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND" />
-    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.REQUEST_PACKAGE_VERIFICATION_AGENT" />
-    <uses-permission android:name="android.permission.REQUEST_PERMISSIONS" />
-    <uses-permission android:name="android.permission.REQUEST_UNINSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-    <uses-permission android:name="android.permission.REQUEST_AUTOBOOT" />
-    <uses-permission android:name="android.permission.REQUEST_ACCESSIBILITY_SERVICE" />
-    <uses-permission android:name="android.permission.REQUEST_NOTIFICATION_LISTENER_SERVICE" />
-    <uses-permission android:name="android.permission.REQUEST_USAGE_ACCESS" />
-    <uses-permission android:name="android.permission.REQUEST_OVERLAY_PERMISSION" />
 
     <application
         android:name=".RitsuApplication"
