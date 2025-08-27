@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Ritsu AI"
 include ':app'
+include ':android_app'

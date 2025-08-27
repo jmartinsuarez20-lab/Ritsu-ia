@@ -86,6 +86,18 @@
         android:name=".RitsuApplication">
         
         <activity
+            android:name=".LauncherActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.RitsuAI.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.RitsuAI.NoActionBar">
@@ -159,6 +171,10 @@
             android:name=".ui.AvatarCustomizationActivity"
             android:theme="@style/Theme.RitsuAI.Kawaii"
             android:exported="false" />
+
+        <activity
+            android:name=".AppDrawerActivity"
+            android:theme="@style/Theme.RitsuAI.NoActionBar" />
         
         <!-- Actividad para modo sin censura (con protección) -->
         <activity
